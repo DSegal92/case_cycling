@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @member.name %>
+</p>
+
+<p>
+  <b>Standing:</b>
+  <%= @member.standing %>
+</p>
+
+<p>
+  <b>Majors:</b>
+  <%= @member.majors %>
+</p>
+
+<p>
+  <b>Minors:</b>
+  <%= @member.minors %>
+</p>
+
+<p>
+  <b>Collegecategory:</b>
+  <%= @member.collegeCategory %>
+</p>
+
+<p>
+  <b>Usaccategory:</b>
+  <%= @member.usacCategory %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @member.bio %>
+</p>
+
+<p>
+  <b>Isracer:</b>
+  <%= @member.isRacer %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%= @member.picture %>
+</p>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

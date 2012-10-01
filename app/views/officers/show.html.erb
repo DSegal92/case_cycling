@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h3>President</h3>
+<% @officer.first.name %>
+
+
+<%= link_to 'Edit', edit_officer_path(@officer) %> |
+<%= link_to 'Back', officers_path %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  standing: MyString
+  majors: MyString
+  minors: MyString
+  collegeCategory: MyString
+  usacCategory: 1
+  bio: MyText
+  isRacer: false
+  picture: MyString
+
+two:
+  name: MyString
+  standing: MyString
+  majors: MyString
+  minors: MyString
+  collegeCategory: MyString
+  usacCategory: 1
+  bio: MyText
+  isRacer: false
+  picture: MyString

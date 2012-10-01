@@ -1,0 +1,39 @@
+<h1>Listing members</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Standing</th>
+    <th>Majors</th>
+    <th>Minors</th>
+    <th>Collegecategory</th>
+    <th>Usaccategory</th>
+    <th>Bio</th>
+    <th>Isracer</th>
+    <th>Picture</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @members.each do |member| %>
+  <tr>
+    <td><%= member.name %></td>
+    <td><%= member.standing %></td>
+    <td><%= member.majors %></td>
+    <td><%= member.minors %></td>
+    <td><%= member.collegeCategory %></td>
+    <td><%= member.usacCategory %></td>
+    <td><%= member.bio %></td>
+    <td><%= member.isRacer %></td>
+    <td><%= member.picture %></td>
+    <td><%= link_to 'Show', member %></td>
+    <td><%= link_to 'Edit', edit_member_path(member) %></td>
+    <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Member', new_member_path %>
