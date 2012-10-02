@@ -1,14 +1,9 @@
 ActiveAdmin.register Ride do
   form do |f|
       f.inputs do
-        f.input :name
-        f.input :year
-        f.input :majors
-        f.input :minors
-        f.input :contact
-        f.input :bio
-        f.input :picture
-        f.input :position, :collection => officer.getPositions
+        f.input :location
+        f.input :time
+        f.input :discipline, :collection => ride.getTypes
       end
       f.buttons
     end

@@ -4,7 +4,9 @@ gem 'rails', '3.2.8'
 gem 'bootstrap-sass', '2.0.4'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
+gem 'taps'
 gem "pg", :group => :production
+
 
 group :development do
   gem 'sqlite3', '1.3.5'
