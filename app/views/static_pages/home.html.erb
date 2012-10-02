@@ -68,7 +68,11 @@ $(document).ready(function() {
 				<tbody>        
 					<% @rides.each do |ride| %>
 					<tr>
-						<td><%= ride.name %></td>                
+						<td colspan='2'>Starting From: <%= ride.location %> (<%= ride.discipline %>)</td>                
+					</tr>
+					<tr>
+						<td></td>
+						<td><%= ride.date.strftime('%A %D') %> at <%= ride.date.strftime("at %I:%M%p") %></td>               
 					</tr>
 					<% end %>
 				</tbody>
