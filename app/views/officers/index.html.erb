@@ -46,16 +46,16 @@
                 </td>
                 <td>
                     <% unless @person.year.empty? %>
-                        <ul><b>Year:</b> <%= @person.year %></ul>
+                        <ul><b>Year: </b> <%= @person.year %></ul>
                     <% end %>
                     <% unless @person.majors.empty? %>
-                    <ul><b>Major(s):</b> <%= @person.majors %></ul>
+                    <ul><b>Major(s): </b> <%= @person.majors %></ul>
                     <% end %>
                     <% unless @person.minors.empty? %>
-                    <ul><b>Minor(s):</b> <%= @person.minors %></ul>
+                    <ul><b>Minor(s): </b> <%= @person.minors %></ul>
                     <% end %>
                     <% unless @person.bio.empty? %>
-                    <ul><b>Bio:</b><%= @person.bio %></ul>
+                    <ul><b>Bio: </b><%= @person.bio %></ul>
                     <% end %>
                 </td>
             </tr>

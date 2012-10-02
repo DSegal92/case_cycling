@@ -5,7 +5,7 @@ ActiveAdmin.register Event do
         f.input :date
         f.input :location
         f.input :website
-        f.input :discipline, :collection => event.getTypes
+      
       end
       f.buttons
     end
