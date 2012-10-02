@@ -2,8 +2,7 @@
 <% @positions.each do |position| %>
 <% @person = Officer.where(position: position).first %>
  <span class="page-header" id="nav1">
-    <% @tempPerson = Officer.where(:position => position).first.name %>
-    <% if Officer.where(name: @tempPerson).size <= 1 %>
+
         <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
     </span>
     <table>
@@ -30,37 +29,9 @@
             </tr>
         </tbody>
     </table>
-        <% end %>
+ 
 <% end %>
 
-     <span class="page-header">
-    <% @person = Officer.where(:position => "Webmaster").first%>
-    <h2>Road Race VP & Webmaster <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
-    </span>
-    <table>
-        <tbody>
-            <tr>
-                <td rowspan = "5" width= "200">
-                    <% @imgString = "/assets/" +  @president.picture + ".jpg" %>
-                    <img src= "<%= @imgString %>">
-                </td>
-                <td>
-                    <% unless @person.year.empty? %>
-                        <ul><b>Year: </b> <%= @person.year %></ul>
-                    <% end %>
-                    <% unless @person.majors.empty? %>
-                    <ul><b>Major(s): </b> <%= @person.majors %></ul>
-                    <% end %>
-                    <% unless @person.minors.empty? %>
-                    <ul><b>Minor(s): </b> <%= @person.minors %></ul>
-                    <% end %>
-                    <% unless @person.bio.empty? %>
-                    <ul><b>Bio: </b><%= @person.bio %></ul>
-                    <% end %>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
 
 

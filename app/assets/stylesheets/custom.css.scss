@@ -10,6 +10,7 @@ html {
 body {
 	background-image:url(/assets/background.png);
   padding-bottom: 60px;
+  font-family:"Times New Roman",Georgia,Serif;
 }
 
 .officers {
@@ -20,20 +21,13 @@ body {
   }
 }
 #nav1 {
-  background: #000;
+
   font-size: 1em;
   letter-spacing: 1.5px;
  text-align: left;
 
 }
 
-#nav2 {
-  background: #000;
-  font-size: 1em;
-  letter-spacing: 1.5px;
- text-align: left;
-
-}
 
 /* top nav */
 #nav ul li {
@@ -44,9 +38,9 @@ body {
 }
 
 #nav ul li a {
-
+  
   color: #626262;
-  background: #000;
+
   padding: 0px 20px 0px 0px;
   text-decoration: none;
 }
@@ -56,7 +50,7 @@ body {
   text-decoration: none;
 }
 #nav ul li a.active {
-  color: #fff; 
+  
 }
 
 
@@ -104,14 +98,10 @@ textarea {
 
 /* Link styles (used on .masthead-links as well) */
 .jumbotron a {
-  color: #fffff;
-  color: rgba(255,255,255,.5);
+  color: #000;
+
   -webkit-transition: all .2s ease-in-out;
      -moz-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
-}
-.jumbotron a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255,255,255,.25);
 }
 
