@@ -1,12 +1,11 @@
 <div class= "bodyContainer">
-    <div class="officers">
 <% @positions.each do |position| %>
 <% @person = Officer.where(position: position).first %>
- <div class="page-header">
+ <span class="page-header" id="nav1">
     <% @tempPerson = Officer.where(:position => position).first.name %>
     <% if Officer.where(name: @tempPerson).size <= 1 %>
         <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
-    </div>
+    </span>
     <table>
         <tbody>
             <tr>
@@ -14,7 +13,7 @@
                     <% @imgString = "/assets/" +  @president.picture + ".jpg" %>
                     <img src= "<%= @imgString %>">
                 </td>
-                <td>
+                <td >
                     <% unless @person.year.empty? %>
                         <ul><b>Year:</b> <%= @person.year %></ul>
                     <% end %>
@@ -34,10 +33,10 @@
         <% end %>
 <% end %>
 
-     <div class="page-header">
+     <span class="page-header">
     <% @person = Officer.where(:position => "Webmaster").first%>
     <h2>Road Race VP & Webmaster <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
-    </div>
+    </span>
     <table>
         <tbody>
             <tr>
