@@ -15,11 +15,15 @@ html {
   background-image:url(/assets/cream_dust.png);
 }
 body {
-	background-image:url(/assets/background.png);
+
   padding-bottom: 60px;
   font-family:"Times New Roman",Georgia,Serif;
 }
 
+#blackShit{
+   background-image:url(/assets/background.png);
+   border-bottom: 7px solid #428CE7;
+}
 .officers {
   td
   {
@@ -129,6 +133,7 @@ footer ul li {
 
 
 .jumbotron {
+
   position: relative;
   padding: 40px 0;
   color: #fffff;
