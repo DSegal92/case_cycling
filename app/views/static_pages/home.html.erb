@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 	$('#banner').bjqs({
 		'animation' : 'slide',
-		'width' : 940,
+		'width' : 960,
 		'height' : 400
 	});
 
@@ -21,78 +21,93 @@ $(document).ready(function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-<div class= "bodyContainer">
-<div class ="container">
-	<div class="hero">
-	<div id="banner">
-		<ul class="bjqs">
-			<li><img src="/assets/banner01.jpg"></li>
-			<li><img src="/assets/banner02.jpg"></li>
-			<li><img src="/assets/banner03.jpg"></li>
-		</ul>
-	</div> 
-	
-	<br><br><br>
-	<hr class="soften">
-	<div class="center">
+
+
+		<div class="hero">
+			<div id="banner">
+				<ul class="bjqs">
+					<li><img src="/assets/banner01.jpg"></li>
+					<li><img src="/assets/banner02.jpg"></li>
+					<li><img src="/assets/banner03.jpg"></li>
+				</ul>
+			</div> 
+		</div>	
+		<br><br><br>
+		<hr class="soften">
 		<div class="row-fluid">
-		<div class="span4">
-			<table>
-				<h4> Upcoming Events </h4>
-				<tbody>        
-					<% @events.each do |event| %>
+			<center>
+				<div class="span4">
+					<table>
+						<h4> Upcoming Events </h4>
+						<tbody>        
+							<% @events.each do |event| %>
+								<% if event.date > Time.now() %>
+								<tr>					
+									<td colspan='2'><i><%= event.name %></i> (<%= event.discipline %>)</td>
+								</tr>
+								<tr>
+									<td>
+										<span id="navFront">
+											<ul> 
+												<li><%= event.location %></li>
+												<li><%= event.date.strftime('%A %D') %> at <%= event.date.strftime("at %I:%M%p") %></li>
+												<li><%= link_to event.website, event.website %></li>
+											</ul>
+										</span>
+									</td>								               
+								</tr>
+								<% end %>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</center>
+			
+			<div class="span4">
+				<center>
+					<table>
+						<h4> Upcoming Rides </h4>
+						<tbody>        
+							<% @rides.each do |ride| %>
+								<% if ride.time > Time.now() || ride.recurring %>
+								<tr>
+									<td colspan='2'><%= ride.discipline %> Ride / <%= ride.distance %> miles / <%= ride.pace %></td>                
+								</tr>
+								<tr>
+									<td>
+										<span id="navFront">
+											<ul>
+												<li>Starting From: <%= ride.location %></li>
+												<li><%= ride.time.strftime("%A %D (%I:%M%p)") %></li>
+											</ul>
+										</span>
+									</td>               
+								</tr>
+								<% end %>
+							<% end %>
+						</tbody>
+					</table>
+				</center>
+			</div>
+			<div class="span4">
+				<table>					
 					<tr>
-						<td colspan='2'><i><%= event.name %></i> - <%= event.location %> (<%= event.discipline %>)</td>
+						<td>
+							<span id="navFront">
+							<ul>
+								<li><div class="fb-like-box" data-href="http://www.facebook.com/cwrucycling" data-width="400" data-show-faces="false" data-stream="false" data-	header="true"></div></li>
+								<li><a class="twitter-timeline" href="https://twitter.com/CaseCycling" data-widget-id="252609785088843777">Tweets by @CaseCycling</a></li>
+							</ul>
+							</span>
+						</td>
 					</tr>
-					<tr>
-						<td></td>
-						<td><%= event.date.strftime('%A %D') %> at <%= event.date.strftime("at %I:%M%p") %></td>						               
-					</tr>
-					<tr>
-						<td></td>
-						<td><%= link_to event.website, event.website %></td>
-					<% end %>
-				</tbody>
-			</table>
+				</table>
+			</div>			
 		</div>
-		<div class="span4">
-			<table>
-				<h4> Upcoming Rides </h4>
-				<tbody>        
-					<% @rides.each do |ride| %>
-					<tr>
-						<td colspan='2'>Starting From: <%= ride.location %> (<%= ride.discipline %>)</td>                
-					</tr>
-					<tr>
-						<td></td>
-						<td><%= ride.time.strftime('%A %D') %> at <%= ride.time.strftime("at %I:%M%p") %></td>               
-					</tr>
-					<% end %>
-				</tbody>
-			</table>
-		</div>
-		<div class="span3">
-			<table>
-				<tr>
-					<td><div class="fb-like-box" data-href="http://www.facebook.com/cwrucycling" data-width="400" data-show-faces="false" data-stream="false" data-header="true"></div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-			<a class="twitter-timeline" href="https://twitter.com/CaseCycling" data-widget-id="252609785088843777">Tweets by @CaseCycling</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-					</td>
-				</tr>
-			<table>
+		<hr class="soften">
+	
 
-		</div>
-
-	</div> 
-
-</div>
-
-
-</div>
 
 

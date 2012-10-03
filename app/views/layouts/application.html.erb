@@ -15,26 +15,29 @@
   </head>
   <body>
     <span class= "jumbotron masthead" id="nav">
-     <center>
-      <img src="/assets/banner.png">
- 
-      <span class="row-fluid">
-        <span id="nav">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/officers">Officers</a></li>
-            <li><a href="#">Coaches</a></li>
-            <li><a href="#">Members</a></li>
-            <li><a href="#">Sponsors</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-
+      <center>
+        <img src="/assets/banner.png"> 
+        <span class="row-fluid">
+          <span id="navTop">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/officers">Officers</a></li>
+              <li><a href="#">Coaches</a></li>
+              <li><a href="#">Members</a></li>
+              <li><a href="#">Sponsors</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>    
+          </span>
         </span>
+      </center>
     </span>
-  </center>
+    
     <div class="container">
-      <%= yield %>
+      <div class= "bodyContainer">
+        <%= yield %> 
+        <%= render "layouts/footer" %>
+      </div>
     </div>
   </body>
 </html>
