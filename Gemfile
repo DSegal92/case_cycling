@@ -5,6 +5,7 @@ gem 'bootstrap-sass', '2.0.4'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'taps'
+gem "therubyracer", :require => 'v8'
 gem "pg", :group => :production
 
 
