@@ -15,7 +15,7 @@ html {
  
 }
 body {
-  background-image:url(/assets/dust);
+  background-image:url(/assets/dust.png);
   padding-bottom: 60px;
   font-family:"Times New Roman",Georgia,Serif;
 }
@@ -31,6 +31,13 @@ body {
     vertical-align:bottom;
   }
 }
+
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #428CE7;
+}
+
 #nav1 {
 
   font-size: 1em;

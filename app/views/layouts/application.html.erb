@@ -12,6 +12,18 @@
 
   <script type="text/javascript" src="/assets/jquery-1.6.2.min.js"></script>
   <script type="text/javascript" src="/assets/basic-jquery-slider.js"></script>
+  <script type='text/javascript'>
+$(window).load(function(){
+$('li.dropdown').hover(
+    function(){
+        $(this).find('ul').slideDown();
+    },
+    function(){
+
+        $(this).find('ul').slideUp();
+    });
+});
+</script>
   </head>
   <body>
     <div id="navBackground">
@@ -20,17 +32,24 @@
         <img src="/assets/banner.png"> 
         <span class="row-fluid">
           <span id="navTop">
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/officers">Officers</a></li>
+            
+    <ul class="dropdown">
+      <li><a href="/">Home</a></li>
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Members</a>
+          <ul class="dropdown-menu">
+              <li><a href='/officers/'>Officers</li>
+              <li><a href="#">Riders</a></li>
               <li><a href="#">Coaches</a></li>
-              <li><a href="#">Members</a></li>
+          </ul>
+      </li>
+
+              <li><a href="#">Routes</a></li>
               <li><a href="#">Sponsors</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Contact</a></li>
 
-            </ul> 
-         
+</ul>​   
           </span>
         </span>
       </center>
