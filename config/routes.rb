@@ -1,22 +1,16 @@
 CaseCycling::Application.routes.draw do
   resources :officers
-
   resources :coaches
-
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
   resources :events
+  resources :rides
+  resources :members
 
   root to: 'static_pages#home'
 
-  resources :rides
+  ActiveAdmin.routes(self)
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resources :members
-
-
-
+  match '/sponsors' => "static_pages#sponsors"
 
 
   # The priority is based upon order of creation:

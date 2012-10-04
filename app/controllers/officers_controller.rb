@@ -4,10 +4,6 @@ class OfficersController < ApplicationController
   def index
   	@positions = Officer.all.map(&:position)
     @officers = Officer.all
-    @president = Officer.where(:position => "President").first
-    @vicePresident = Officer.where(:position => "Vice President").first
-
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @officers }

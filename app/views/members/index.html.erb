@@ -1,39 +1,103 @@
-<h1>Listing members</h1>
+<h1> Racers </h1>
+<br>
+<% @racers.each do |racer| %>
+ <span class="page-header" id="nav1">
+    <h3> <%= racer.name %></h3>
+    </span>
+    <table>
+        <tbody>
+            <tr>
+                <td rowspan = "5" width= "200">
+                    <% @imgString = "/assets/" +  racer.picture + ".jpg" %>
+                    <img src= "<%= @imgString %>">
+                </td>
+                <td>
+                    <ul>                        
+                        <% unless racer.standing.empty? %>
+                            <li><b>Year:</b> <%= racer.standing %></li>
+                        <% end %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Standing</th>
-    <th>Majors</th>
-    <th>Minors</th>
-    <th>Collegecategory</th>
-    <th>Usaccategory</th>
-    <th>Bio</th>
-    <th>Isracer</th>
-    <th>Picture</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+                        <% unless racer.majors.empty? %>
+                            <li><b>Major(s):</b> <%= racer.majors %></li>
+                        <% end %>
 
-<% @members.each do |member| %>
-  <tr>
-    <td><%= member.name %></td>
-    <td><%= member.standing %></td>
-    <td><%= member.majors %></td>
-    <td><%= member.minors %></td>
-    <td><%= member.collegeCategory %></td>
-    <td><%= member.usacCategory %></td>
-    <td><%= member.bio %></td>
-    <td><%= member.isRacer %></td>
-    <td><%= member.picture %></td>
-    <td><%= link_to 'Show', member %></td>
-    <td><%= link_to 'Edit', edit_member_path(member) %></td>
-    <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+                        <% unless racer.minors.empty? %>
+                            <li><b>Minor(s):</b> <%= racer.minors %></li>
+                        <% end %>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <% unless racer.usacCategory.nil? %>
+                            <li><b>USAC Category:</b> <%= racer.usacCategory %> </li>
+                        <% end %>
+
+                        <% unless racer.collegeCategory.empty? %>
+                            <li><b>Collegiate Category:</b> <%= racer.collegeCategory %> </li>
+                        <% end %>
+
+                        <% unless racer.disciplines.empty? %>
+                            <li><b>Disciplines: </b>
+                            <% racer.disciplines.each_with_index do |dis, index| %>
+                                <% if index == 0 %>
+                                    <%= dis.name %>   
+                                <% else %>
+                                    / <%= dis.name %>
+                                <% end %>                       
+                            <% end %>
+                            </li>
+                        <% end %>
+                    </ul>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <% unless racer.bio.empty? %>
+                    <ul><b>Bio:</b> <%= racer.bio %></ul>
+                    <% end %>
+                </td>
+              
+            </tr>
+        </tbody>
+    </table> 
 <% end %>
-</table>
+<div class="row-fluid">
+    <div class="span9">
+        <h1> Recreational Riders </h1>
+        <table class="recTable">
+            <tr>
+                <% @recRiders.each_with_index do |rec, index| %>        
+                    <% if index % 3 == 0 %>
+                        </tr><tr>
+                    <% end %>                   
+                        <td class="recCell">
+                            <ul>
+                                <li><h3><%= rec.name %><small>(<%= rec.standing %>)</small></li></h3>
+                                <li>
+                                    <% unless rec.disciplines.empty? %>                        
+                                        <% rec.disciplines.each_with_index do |dis, index| %>
+                                            <% if index == 0 %>
+                                                <%= dis.name %>   
+                                            <% else %>
+                                                / <%= dis.name %>
+                                            <% end %>                       
+                                        <% end %>                                
+                                    <% end %>
+                                </li>
+                            </ul>
+                        </td>
+                <% end %>
+            </tr>
+        </table>
+    </div>
+</div>
+
+    
+
+
+
+
 
 <br />
 
-<%= link_to 'New Member', new_member_path %>

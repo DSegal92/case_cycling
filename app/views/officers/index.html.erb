@@ -1,9 +1,7 @@
-<div class= "bodyContainer">
 <% @positions.each do |position| %>
 <% @person = Officer.where(position: position).first %>
  <span class="page-header" id="nav1">
-
-        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
+    <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
     </span>
     <table>
         <tbody>
@@ -32,7 +30,6 @@
  
 <% end %>
 
-</div>
 
 
 

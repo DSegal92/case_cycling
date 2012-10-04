@@ -3,7 +3,8 @@ class MembersController < ApplicationController
   # GET /members.json
   def index
     @members = Member.all
-
+    @racers = Member.where(isRacer: true).find(:all, :order => "name ASC")
+    @recRiders = Member.where(isRacer: false).find(:all, :order => "name ASC")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @members }
