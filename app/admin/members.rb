@@ -16,4 +16,22 @@ ActiveAdmin.register Member do
       end
       f.buttons
     end
+
+    index do
+      column :name
+      column :standing
+      column :majors
+      column :minors
+      column :collegeCategory
+      column :usacCategory
+      column "Biography" do |member|
+        unless member.bio.nil?
+          truncate(member.bio, :length => 10)       
+        end
+      end
+      column :isRacer
+      column :picture
+      column :disciplines
+      default_actions
+    end
 end

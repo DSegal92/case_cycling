@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121004023939) do
+ActiveRecord::Schema.define(:version => 20121007003636) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -85,12 +85,12 @@ ActiveRecord::Schema.define(:version => 20121004023939) do
     t.string   "majors"
     t.string   "minors"
     t.string   "collegeCategory"
-    t.integer  "usacCategory"
     t.text     "bio"
     t.boolean  "isRacer"
     t.string   "picture"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "usacCategory"
   end
 
   create_table "members_disciplines", :id => false, :force => true do |t|
