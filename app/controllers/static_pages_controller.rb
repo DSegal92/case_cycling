@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
 
   def sponsors
   end
+
+  def error
+  end
 end

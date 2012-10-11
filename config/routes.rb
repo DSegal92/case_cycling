@@ -11,6 +11,7 @@ CaseCycling::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   match '/sponsors' => "static_pages#sponsors"
+  match '/error' => "static_pages#error"
 
 
   # The priority is based upon order of creation:
