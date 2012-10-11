@@ -87,15 +87,7 @@ table.recTable {
 
 }
 
-#navBottom ul li {
-  font-size:10px;
-  display: inline;
-  list-style: none;
-  text-align: left;
-  a{color: #0a304e;
-    text-decoration: none;};
 
-}
 
 #nav ul li a {
   
@@ -130,36 +122,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
-}
-
-footer a {
-   color: #626262;
-}  
-
-footer a:hover { 
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
-}
 
 
 .jumbotron {
