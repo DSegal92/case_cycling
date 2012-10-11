@@ -1,4 +1,17 @@
-body {
+/* #Fontface
+================================================== */
+
+    @font-face {
+        font-family: "test";
+        src: url("/assets/asdf/test.otf") format("opentype");
+        font-weight: 999;
+        font-style: normal;    
+    }
+
+ 
+
+
+    body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -6,9 +19,54 @@ body {
   line-height: 18px;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+#headerTextBig{
+   font-family: TitilliumMaps26L-500wt, sans-serif;
+   font-size: 45px;
+   text-transform: lowercase;
+   color: #fff;
+}
+
+#headerTextSmall{
+   font-family: TitilliumMaps26L-500wt, sans-serif;
+   font-size: 30px;
+   text-transform: lowercase;
+   color: #fff;
+}
+
+#upcoming{
+    font-family: TitilliumMaps26L-750wt, sans-serif;
+    font-size: 18px;
+    color: #003755;
+}
+
+#navigation{
+   font-family: TitilliumMaps26L-250wt, sans-serif;
+   font-size: 18px;
+}
+
+#postTitle{
+   font-family: TitilliumMaps26L-750wt, sans-serif;
+   font-size: 24px;
+   text-transform: lowercase;
+   color: #003755;
+}
+
+#postDate{
+  font-family: TitilliumMaps26L-750wt, sans-serif;
+   font-size: 16px;
+   text-transform: lowercase;
+   color: #003755;
+}
+
+#contentText{
+  font-family: TitilliumMaps26L-250wt, sans-serif;
+   font-size: 14px;
+ 
+
+}
+
+p, ol, ul, td { 
+ 
   line-height: 18px;
 }
 
@@ -53,6 +111,7 @@ div {
     color: #fff;
   }
   ul li {
+   
     font-size: 12px;
     list-style: square;
   }

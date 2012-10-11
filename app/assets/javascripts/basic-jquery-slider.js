@@ -47,7 +47,7 @@
 				// Allow navigation with arrow keys
                 keyboardNav: true,
 				// Use image title text as caption
-                useCaptions: false
+                useCaptions: true
             },
             $container = this,
             $slider = $container.find('.bjqs'),

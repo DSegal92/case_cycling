@@ -1,12 +1,13 @@
 <link rel="stylesheet" href="assets/basic-jquery-slider.css">
 
 <script>
-$(document).ready(function() {
+jQuery(document).ready(function($) {
 
 	$('#banner').bjqs({
 		'animation' : 'slide',
 		'width' : 960,
-		'height' : 400
+		'height' : 400,
+		responsive : true
 	});
 
 	
@@ -25,23 +26,90 @@ $(document).ready(function() {
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-		<div class="hero">
-			<div id="banner">
-				<ul class="bjqs">
-					<li><img src="/assets/banner01.jpg"></li>
-					<li><img src="/assets/banner02.jpg"></li>
-					<li><img src="/assets/banner03.jpg"></li>
-					<li><img src="/assets/banner04.jpg"></li>
-				</ul>
-			</div> 
+		<div class="row-fluid">
+			<div class="container">
+				<div id="banner">
+					<ul class="bjqs">
+						<li><img src="/assets/banner01.jpg"></li>
+						<li><img src="/assets/banner02.jpg"></li>
+						<li><img src="/assets/banner03.jpg"></li>
+						<li><img src="/assets/banner04.jpg"></li>
+					</ul>
+				</div> 
+			</div>
 		</div>	
 		<br><br><br>
 		<hr class="soften">
 		<div class="row-fluid">
-			<center>
+			<div class="span8">
+				<% @posts.each do |post| %>
+					<table>
+						<tbody>
+							<tr>
+								<td id="postTitle" colspan='2'> <%= post.title %></td>
+								<td id="postDate"> <%= post.date %></td>
+							<tr>
+								<td id="contentText" colspan='3'><%= post.contents %></td>
+							</tr>
+						</tbody>
+					</table>
+				<% end %>		
+			</div>
+			<div class="span4">
+				<table id="contentText">
+						<h4 id="upcoming"> Upcoming Events</h4>
+						<tbody>        
+							<% @events.each do |event| %>
+								<% if event.date > Time.now() %>
+								<tr>					
+									<td colspan='2'><%= event.name %> (<%= event.discipline %>)</td>
+								</tr>
+								<tr>
+									<td>
+										<span id="navFront">
+											<ul> 
+												<li><%= event.location %></li>
+												<li><%= event.date.strftime('%A %D') %> at <%= event.date.strftime("at %I:%M%p") %></li>
+												<li><%= link_to event.website, event.website %></li>
+											</ul>
+										</span>
+									</td>								               
+								</tr>
+								<% end %>
+							<% end %>
+						</tbody>
+					</table>
+					<table>
+						<h4 id="upcoming"> Upcoming Rides </h4>
+						<tbody>        
+							<% @rides.each do |ride| %>
+								<% if ride.time > Time.now() || ride.recurring %>
+								<tr>
+									<td colspan='2'><%= ride.discipline %> Ride / <%= ride.distance %> miles / <%= ride.pace %></td>                
+								</tr>
+								<tr>
+									<td>
+										<span id="navFront">
+											<ul id="contentText">
+												<li>Starting From: <%= ride.location %></li>
+												<li><%= ride.time.strftime("%A %D (%I:%M%p)") %></li>
+											</ul>
+										</span>
+									</td>               
+								</tr>
+								<% end %>
+							<% end %>
+						</tbody>
+					</table>
+			</div>
+		</div>
+		<hr class="soften">
+
+
+		<!--<center>
 				<div class="span4">
 					<table>
-						<h4> Upcoming Events </h4>
+						<h4> Upcoming Events</h4>
 						<tbody>        
 							<% @events.each do |event| %>
 								<% if event.date > Time.now() %>
@@ -52,6 +120,7 @@ $(document).ready(function() {
 									<td>
 										<span id="navFront">
 											<ul> 
+
 												<li><%= event.location %></li>
 												<li><%= event.date.strftime('%A %D') %> at <%= event.date.strftime("at %I:%M%p") %></li>
 												<li><%= link_to event.website, event.website %></li>
@@ -105,9 +174,7 @@ $(document).ready(function() {
 						</td>
 					</tr>
 				</table>
-			</div>			
-		</div>
-		<hr class="soften">
+			</div>	-->	
 
 	
 

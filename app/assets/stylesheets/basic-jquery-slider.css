@@ -15,17 +15,15 @@ body{
   background:#00000;
   
 }
-
-#container{
-  width:980px;
-  padding:100px 0;
-  margin:0 auto;
-  overflow:hidden;
+.container {
+    padding: 0px 0 0 0px;
+    width: 960px;
+    position: relative;
+    overflow: hidden;
 }
-
 #banner {
-  height:450px;
-  width:800px;
+  height:400px;
+  width:960px;
   margin:0 auto;
   position:relative;
 

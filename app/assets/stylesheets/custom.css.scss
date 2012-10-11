@@ -1,3 +1,7 @@
+body {
+  background-image:url(/assets/dust.png);
+  padding-bottom: 60px;  
+}
 @import "bootstrap";
 
 @media (min-width: 1200px) {
@@ -9,6 +13,8 @@
 ul{
     list-style: none;
 }
+
+
 
 html {
   overflow-y: scroll;
@@ -22,15 +28,6 @@ html {
   float:right;
 }
 
-.bodyContainer{
-  
-}
-
-body {
-  background-image:url(/assets/dust.png);
-  font-family: verdana, arial, helvetica, sans-serif;
-  padding-bottom: 60px;  
-}
 
 div.sponsors{
   text-align: center;
@@ -84,7 +81,7 @@ table.recTable {
 
 /* top nav */
 #navTop ul li {
-  text-transform: uppercase;
+  
   display: inline;
   list-style: none;
 
