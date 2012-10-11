@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))
@@ -11,6 +12,12 @@ end
 
 module CaseCycling
   class Application < Rails::Application
+
+    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+        r301 %r{.*}, 'http://www.casecycling.com$&', :if => Proc.new {|rack_env|
+        rack_env['SERVER_NAME'] == 'casecycling.com'
+        }
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -32,6 +39,7 @@ module CaseCycling
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
