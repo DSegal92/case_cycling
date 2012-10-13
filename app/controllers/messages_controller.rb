@@ -43,7 +43,7 @@ class MessagesController < InheritedResources::Base
     @message = Message.new(params[:message])
     respond_to do |format|
       if @message.save
-      	UserMailer.test().deliver  
+      	MessageMailer.test().deliver  
         format.html { redirect_to "/contact", notice: 'Your message has been sent. Thank you for contacting us.' }
         format.json { render json: @message, status: :created, location: @message }
       else
