@@ -7,6 +7,6 @@ default from: "postmaster@casecycling.mailgun.org"
     @name = name
     @email = email
     @message = message
-    mail(to: "DSegal92@gmail.com", :subject => "New Email about" + @topic)
+    mail(to: "DSegal92@gmail.com", :subject => "New Email about " + @topic)
   end
 end
