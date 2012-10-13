@@ -1,7 +1,7 @@
 class MessageMailer < ActionMailer::Base
 
 default from: "postmaster@casecycling.mailgun.org"	  
-
+ 
   def newMessage(topic, name, email, message)
     @topic = topic
     @name = name
