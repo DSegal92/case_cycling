@@ -1,4 +1,6 @@
 CaseCycling::Application.routes.draw do
+
+  resources :messages
   resources :officers
   resources :coaches
   resources :events
@@ -10,8 +12,10 @@ CaseCycling::Application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  match '/contact' => "messages#new"
   match '/sponsors' => "static_pages#sponsors"
   match '/error' => "static_pages#error"
+  match '/contact' => "static_pages#contact"
 
 
   # The priority is based upon order of creation:

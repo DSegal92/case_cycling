@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121011195617) do
+ActiveRecord::Schema.define(:version => 20121013201958) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20121011195617) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "contacted"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -60,6 +61,15 @@ ActiveRecord::Schema.define(:version => 20121011195617) do
     t.string   "contact"
     t.text     "bio"
     t.string   "picture"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "contacts", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "topic"
+    t.text     "message"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -109,6 +119,15 @@ ActiveRecord::Schema.define(:version => 20121011195617) do
 
   add_index "members_disciplines", ["discipline_id", "member_id"], :name => "index_members_disciplines_on_discipline_id_and_member_id"
   add_index "members_disciplines", ["member_id", "discipline_id"], :name => "index_members_disciplines_on_member_id_and_discipline_id"
+
+  create_table "messages", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.string   "topic"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "officers", :force => true do |t|
     t.string   "name"

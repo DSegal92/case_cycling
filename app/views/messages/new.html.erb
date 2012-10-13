@@ -1,0 +1,27 @@
+ <legend>Contact Us</legend>
+
+ <%= form_for @message, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+ <table>
+ 	<tbody>
+ 		<tr>
+ 			<td>Topic</td>
+ 			<td><%= f.select :topic, options_for_select([["Select One", ""], "General Information", "Sponsorship", "Race Information", "Joining the Team", "Website Questions"]), :class => 'genForm_dropBox' %></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Name</td>
+ 			<td><%= f.text_field :name %></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Email Address</td>
+ 			<td><%= f.text_field :email %></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Message</td>
+ 			<td><%= f.text_area :message, :size => "60x12" %></td>
+ 		</tr>
+ 	</tbody>
+ </table>
+ 
+  <br><br>
+  <%= f.submit "Create" %>
+<% end %>
