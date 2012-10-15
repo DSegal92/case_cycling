@@ -21,12 +21,12 @@
         var settings = {},
             defaults = {
 				// Width + Height used to ensure consistency
-                width: 700,
-                height: 300,
+                width: 960,
+                height: 400,
 				// The type of animation (slide or fade)
                 animation: 'fade',
                 // The duration in ms of the transition between slides
-                animationDuration: 400,
+                animationDuration: 0,
                 // Automatically rotate through the slides
 				automatic: true,
 				// Delay in ms between auto rotation of the slides
