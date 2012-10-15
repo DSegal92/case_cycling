@@ -1,4 +1,4 @@
-<% @positions.each do |position| %>
+<!--<% @positions.each do |position| %>
 <% @person = Officer.where(position: position).first %>
  <span class="page-header" id="nav1">
     <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
@@ -6,11 +6,11 @@
     <table id="contentText">
         <tbody>
             <tr>
-                <td rowspan = "5" width= "250">
+                <td width= "200">
                     <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
                     <img src= "<%= @imgString %>">
                 </td>
-                <td >
+                <td>
                     <% unless @person.year.empty? %>
                         <ul><b>Year:</b> <%= @person.year %></ul>
                     <% end %>
@@ -30,10 +30,32 @@
  
 <% end %>
 
+-->
 
+<% @positions.each do |position| %>
+<% @person = Officer.where(position: position).first %>
+    <div class="row-fluid">
+        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
+        <div class="span2">
+             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
+                     <img src= "<%= @imgString %>">
+         </div>
+         <div class="span9">
+            <ul>
+                <% unless @person.year.empty? %>
+                        <li><b>Year:</b> <%= @person.year %></li>
+                    <% end %>
+                    <% unless @person.majors.empty? %>
+                    <li><b>Major(s):</b> <%= @person.majors %></li>
+                    <% end %>
+                    <% unless @person.minors.empty? %>
+                    <li><b>Minor(s):</b> <%= @person.minors %></li>
+                    <% end %>
+                    <% unless @person.bio.empty? %>
+                    <li><b>Bio:</b><%= @person.bio %></li>
+                    <% end %>                     
+    </div> 
+</div>
+<% end %>
 
-
-
-
-<br />
 
