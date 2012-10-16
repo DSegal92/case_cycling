@@ -51,7 +51,7 @@ jQuery(document).ready(function($) {
 							<tr>
 								<td id="contentText" colspan='3'><%= simple_format(post.contents) %></td>
 							</tr>
-							<% unless post.url.nil? %>
+							<% unless post.url.nil? || post.url.empty? %>
 							<tr>
 								<td colspan='3'><iframe width="560" height="315" src= <%= post.url %> frameborder="0" allowfullscreen></iframe></td>
 							</tr>

@@ -1,12 +1,19 @@
-<% position = "President" %>
+<% @types.each do |type| %>
+<br>
+<% position = type %>
 <% @person = Officer.where(position: position).first %>
     <div class="row-fluid">
-        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
-        <div class="span2">
+        <h2 id="nameBig"><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
+        <div class="span12">
+            <table id="bioText">
+                <tbody>
+                    <tr>
+                        <td width="200">
              <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
                      <img src= "<%= @imgString %>">
-         </div>
-         <div class="span9">
+                 </td>
+                 <td>
+    
             <ul>
                 <% unless @person.year.empty? %>
                         <li><b>Year:</b> <%= @person.year %></li>
@@ -18,161 +25,13 @@
                     <li><b>Minor(s):</b> <%= @person.minors %></li>
                     <% end %>
                     <% unless @person.bio.empty? %>
-                    <li><b>Bio:</b><%= @person.bio %></li>
-                    <% end %>                     
-    </div> 
+                    <li><b>Bio: </b><%= @person.bio %></li>
+                    <% end %>  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+ 
 </div>
 <br><br>
-
-<% position = "Vice President" %>
-<% @person = Officer.where(position: position).first %>
-    <div class="row-fluid">
-        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
-        <div class="span2">
-             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
-                     <img src= "<%= @imgString %>">
-         </div>
-         <div class="span9">
-            <ul>
-                <% unless @person.year.empty? %>
-                        <li><b>Year:</b> <%= @person.year %></li>
-                    <% end %>
-                    <% unless @person.majors.empty? %>
-                    <li><b>Major(s):</b> <%= @person.majors %></li>
-                    <% end %>
-                    <% unless @person.minors.empty? %>
-                    <li><b>Minor(s):</b> <%= @person.minors %></li>
-                    <% end %>
-                    <% unless @person.bio.empty? %>
-                    <li><b>Bio:</b><%= @person.bio %></li>
-                    <% end %>                     
-    </div> 
-</div>
-<br><br>
-
-<% position = "Treasurer" %>
-<% @person = Officer.where(position: position).first %>
-    <div class="row-fluid">
-        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
-        <div class="span2">
-             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
-                     <img src= "<%= @imgString %>">
-         </div>
-         <div class="span9">
-            <ul>
-                <% unless @person.year.empty? %>
-                        <li><b>Year:</b> <%= @person.year %></li>
-                    <% end %>
-                    <% unless @person.majors.empty? %>
-                    <li><b>Major(s):</b> <%= @person.majors %></li>
-                    <% end %>
-                    <% unless @person.minors.empty? %>
-                    <li><b>Minor(s):</b> <%= @person.minors %></li>
-                    <% end %>
-                    <% unless @person.bio.empty? %>
-                    <li><b>Bio:</b><%= @person.bio %></li>
-                    <% end %>                     
-    </div> 
-</div>
-<br><br>
-<% position = "Safety Officer" %>
-<% @person = Officer.where(position: position).first %>
-    <div class="row-fluid">
-        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
-        <div class="span2">
-             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
-                     <img src= "<%= @imgString %>">
-         </div>
-         <div class="span9">
-            <ul>
-                <% unless @person.year.empty? %>
-                        <li><b>Year:</b> <%= @person.year %></li>
-                    <% end %>
-                    <% unless @person.majors.empty? %>
-                    <li><b>Major(s):</b> <%= @person.majors %></li>
-                    <% end %>
-                    <% unless @person.minors.empty? %>
-                    <li><b>Minor(s):</b> <%= @person.minors %></li>
-                    <% end %>
-                    <% unless @person.bio.empty? %>
-                    <li><b>Bio:</b><%= @person.bio %></li>
-                    <% end %>                     
-    </div> 
-</div>
-<br><br>
-<% position = "Road Race Coordinator" %>
-<% @person = Officer.where(position: position).first %>
-    <div class="row-fluid">
-        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
-        <div class="span2">
-             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
-                     <img src= "<%= @imgString %>">
-         </div>
-         <div class="span9">
-            <ul>
-                <% unless @person.year.empty? %>
-                        <li><b>Year:</b> <%= @person.year %></li>
-                    <% end %>
-                    <% unless @person.majors.empty? %>
-                    <li><b>Major(s):</b> <%= @person.majors %></li>
-                    <% end %>
-                    <% unless @person.minors.empty? %>
-                    <li><b>Minor(s):</b> <%= @person.minors %></li>
-                    <% end %>
-                    <% unless @person.bio.empty? %>
-                    <li><b>Bio:</b><%= @person.bio %></li>
-                    <% end %>                     
-    </div> 
-</div>
-<br><br>
-<% position = "Sponsorship Coordinator" %>
-<% @person = Officer.where(position: position).first %>
-    <div class="row-fluid">
-        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
-        <div class="span2">
-             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
-                     <img src= "<%= @imgString %>">
-         </div>
-         <div class="span9">
-            <ul>
-                <% unless @person.year.empty? %>
-                        <li><b>Year:</b> <%= @person.year %></li>
-                    <% end %>
-                    <% unless @person.majors.empty? %>
-                    <li><b>Major(s):</b> <%= @person.majors %></li>
-                    <% end %>
-                    <% unless @person.minors.empty? %>
-                    <li><b>Minor(s):</b> <%= @person.minors %></li>
-                    <% end %>
-                    <% unless @person.bio.empty? %>
-                    <li><b>Bio:</b><%= @person.bio %></li>
-                    <% end %>                     
-    </div> 
-</div>
-<br><br>
-
-<% position = "Webmaster" %>
-<% @person = Officer.where(position: position).first %>
-    <div class="row-fluid">
-        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
-        <div class="span2">
-             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
-                     <img src= "<%= @imgString %>">
-         </div>
-         <div class="span9">
-            <ul>
-                <% unless @person.year.empty? %>
-                        <li><b>Year:</b> <%= @person.year %></li>
-                    <% end %>
-                    <% unless @person.majors.empty? %>
-                    <li><b>Major(s):</b> <%= @person.majors %></li>
-                    <% end %>
-                    <% unless @person.minors.empty? %>
-                    <li><b>Minor(s):</b> <%= @person.minors %></li>
-                    <% end %>
-                    <% unless @person.bio.empty? %>
-                    <li><b>Bio:</b><%= @person.bio %></li>
-                    <% end %>                     
-    </div> 
-</div>
-
+<% end %>

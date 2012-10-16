@@ -1,10 +1,10 @@
-<h1> Racers </h1>
+<br><center><h1 id="pageTitle"> Racers </h1></center>
 <br>
 <% @racers.each do |racer| %>
  <span class="page-header" id="nav1">
-    <h3> <%= racer.name %></h3>
+    <h3 id="nameBig"> <%= racer.name %></h3>
     </span>
-    <table>
+    <table id="bioText">
         <tbody>
             <tr>
                 <td rowspan = "5" width= "200">
@@ -62,9 +62,11 @@
         </tbody>
     </table> 
 <% end %>
+<br>
 <div class="row-fluid">
-    <div class="span9">
-        <h1> Recreational Riders </h1>
+    <div class="span12">
+        <center><h1 id="pageTitle"> Recreational Riders </h1></center>
+        <br>
         <table class="recTable">
             <tr>
                 <% @recRiders.each_with_index do |rec, index| %>        
@@ -73,8 +75,8 @@
                     <% end %>                   
                         <td class="recCell">
                             <ul>
-                                <li><h3><%= rec.name %><small>(<%= rec.standing %>)</small></li></h3>
-                                <li>
+                                <li><h3 id="nameBig"><%= rec.name %><small> (<%= rec.standing %>)</small></li></h3>
+                                <li id="bioText">
                                     <% unless rec.disciplines.empty? %>                        
                                         <% rec.disciplines.each_with_index do |dis, index| %>
                                             <% if index == 0 %>

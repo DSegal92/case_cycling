@@ -4,7 +4,7 @@ class OfficersController < ApplicationController
   def index
   	@positions = Officer.all.map(&:position)
     @officers = Officer.find(:all, :order => "id desc")
-
+    @types = ["President","Vice President","Treasurer","Safety Officer", "Road Race Coordinator", "Sponsorship Coordinator", "Webmaster"]
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @officers }

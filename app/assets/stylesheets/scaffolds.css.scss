@@ -44,9 +44,22 @@
   line-height: 18px;
 }
 
+#nameBig{
+   font-family: "TitilliumMaps26L-500wt", sans-serif;
+   font-size: 24px;
+   text-transform: lowercase;
+   color: #003755;
+   small {
+    font-family: "TitilliumMaps26L-250wt", sans-serif;
+    font-size: 18px;
+  }
+}
+
+
+
 #headerTextBig{
    font-family: "TitilliumMaps26L-500wt", sans-serif;
-   font-size: 45px;
+   font-size: 36px;
    text-transform: lowercase;
    color: #fff;
     text-shadow: 0 1px 0 rgba(0,0,0,0.01);
@@ -54,7 +67,7 @@
 
 #headerTextSmall{
    font-family: "TitilliumMaps26L-250wt";
-   font-size: 30px;
+   font-size: 20px;
    text-transform: lowercase;
    color: #fff;
    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
@@ -81,6 +94,14 @@
    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
 }
 
+#pageTitle{
+   font-family: TitilliumMaps26L-250wt, sans-serif;
+   font-size: 40px;
+   text-transform: lowercase;
+   color: #003755;
+   text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+}
+
 #postDate{
   font-family: TitilliumMaps26L-750wt, sans-serif;
    font-size: 16px;
@@ -90,6 +111,14 @@
 }
 
 #contentText{
+  font-family: TitilliumMaps26L-250wt, sans-serif;
+   font-size: 14px;
+   text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+ 
+
+}
+
+#bioText{
   font-family: TitilliumMaps26L-250wt, sans-serif;
    font-size: 14px;
    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
