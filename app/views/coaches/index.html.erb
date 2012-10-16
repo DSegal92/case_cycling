@@ -1,29 +1,16 @@
-<h1>Listing coaches</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Contact</th>
-    <th>Bio</th>
-    <th>Picture</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @coaches.each do |coach| %>
-  <tr>
-    <td><%= coach.name %></td>
-    <td><%= coach.contact %></td>
-    <td><%= coach.bio %></td>
-    <td><%= coach.picture %></td>
-    <td><%= link_to 'Show', coach %></td>
-    <td><%= link_to 'Edit', edit_coach_path(coach) %></td>
-    <td><%= link_to 'Destroy', coach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <div class="row-fluid">
+        <h2><%= coach.name %> <small>(<%= link_to coach.contact, "mailto:" + coach.contact %>)</small></h2>
+        <div class="span2">
+             <% @imgString = "/assets/" +  coach.picture + ".jpg" %>
+                     <img src= "<%= @imgString %>">
+         </div>
+         <div class="span9">
+            <ul>
+          
+                    <% unless coach.bio.empty? %>
+                    <li><b>Bio:</b><%= coach.bio %></li>
+                    <% end %>                     
+    </div> 
+</div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Coach', new_coach_path %>

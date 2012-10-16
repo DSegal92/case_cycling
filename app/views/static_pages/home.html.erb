@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
 			</div>
 			<div class="span4">
 				<table id="contentText">
-						<h4 id="upcoming"> Upcoming Events</h4>
+						<h4 id="upcoming"> upcoming events</h4>
 						<tbody>        
 							<% @events.each do |event| %>
 								<% if event.date > Time.now() %>
@@ -85,7 +85,7 @@ jQuery(document).ready(function($) {
 						</tbody>
 					</table>
 					<table>
-						<h4 id="upcoming"> Upcoming Rides </h4>
+						<h4 id="upcoming"> upcoming rides </h4>
 						<tbody>        
 							<% @rides.each do |ride| %>
 								<% if ride.time > Time.now() || ride.recurring %>
@@ -97,7 +97,11 @@ jQuery(document).ready(function($) {
 										<span id="navFront">
 											<ul id="contentText">
 												<li>Starting From: <%= ride.location %></li>
+												<% if ride.recurring %>
+												<li><%= ride.time.strftime("%A (%I:%M%p)") %>
+												<% else %>
 												<li><%= ride.time.strftime("%A %D (%I:%M%p)") %></li>
+												<% end %>
 											</ul>
 										</span>
 									</td>               

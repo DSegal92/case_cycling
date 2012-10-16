@@ -3,7 +3,8 @@ class OfficersController < ApplicationController
   # GET /officers.json
   def index
   	@positions = Officer.all.map(&:position)
-    @officers = Officer.all
+    @officers = Officer.find(:all, :order => "id desc")
+    @events = Event.find(:all, :order => "date DESC").first(3)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @officers }
