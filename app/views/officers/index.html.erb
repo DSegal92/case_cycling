@@ -1,4 +1,4 @@
-<% @positions.each do |position| %>
+<% position = "President" %>
 <% @person = Officer.where(position: position).first %>
     <div class="row-fluid">
         <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
@@ -22,6 +22,157 @@
                     <% end %>                     
     </div> 
 </div>
-<% end %>
+<br><br>
 
+<% position = "Vice President" %>
+<% @person = Officer.where(position: position).first %>
+    <div class="row-fluid">
+        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
+        <div class="span2">
+             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
+                     <img src= "<%= @imgString %>">
+         </div>
+         <div class="span9">
+            <ul>
+                <% unless @person.year.empty? %>
+                        <li><b>Year:</b> <%= @person.year %></li>
+                    <% end %>
+                    <% unless @person.majors.empty? %>
+                    <li><b>Major(s):</b> <%= @person.majors %></li>
+                    <% end %>
+                    <% unless @person.minors.empty? %>
+                    <li><b>Minor(s):</b> <%= @person.minors %></li>
+                    <% end %>
+                    <% unless @person.bio.empty? %>
+                    <li><b>Bio:</b><%= @person.bio %></li>
+                    <% end %>                     
+    </div> 
+</div>
+<br><br>
+
+<% position = "Treasurer" %>
+<% @person = Officer.where(position: position).first %>
+    <div class="row-fluid">
+        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
+        <div class="span2">
+             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
+                     <img src= "<%= @imgString %>">
+         </div>
+         <div class="span9">
+            <ul>
+                <% unless @person.year.empty? %>
+                        <li><b>Year:</b> <%= @person.year %></li>
+                    <% end %>
+                    <% unless @person.majors.empty? %>
+                    <li><b>Major(s):</b> <%= @person.majors %></li>
+                    <% end %>
+                    <% unless @person.minors.empty? %>
+                    <li><b>Minor(s):</b> <%= @person.minors %></li>
+                    <% end %>
+                    <% unless @person.bio.empty? %>
+                    <li><b>Bio:</b><%= @person.bio %></li>
+                    <% end %>                     
+    </div> 
+</div>
+<br><br>
+<% position = "Safety Officer" %>
+<% @person = Officer.where(position: position).first %>
+    <div class="row-fluid">
+        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
+        <div class="span2">
+             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
+                     <img src= "<%= @imgString %>">
+         </div>
+         <div class="span9">
+            <ul>
+                <% unless @person.year.empty? %>
+                        <li><b>Year:</b> <%= @person.year %></li>
+                    <% end %>
+                    <% unless @person.majors.empty? %>
+                    <li><b>Major(s):</b> <%= @person.majors %></li>
+                    <% end %>
+                    <% unless @person.minors.empty? %>
+                    <li><b>Minor(s):</b> <%= @person.minors %></li>
+                    <% end %>
+                    <% unless @person.bio.empty? %>
+                    <li><b>Bio:</b><%= @person.bio %></li>
+                    <% end %>                     
+    </div> 
+</div>
+<br><br>
+<% position = "Road Race Coordinator" %>
+<% @person = Officer.where(position: position).first %>
+    <div class="row-fluid">
+        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
+        <div class="span2">
+             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
+                     <img src= "<%= @imgString %>">
+         </div>
+         <div class="span9">
+            <ul>
+                <% unless @person.year.empty? %>
+                        <li><b>Year:</b> <%= @person.year %></li>
+                    <% end %>
+                    <% unless @person.majors.empty? %>
+                    <li><b>Major(s):</b> <%= @person.majors %></li>
+                    <% end %>
+                    <% unless @person.minors.empty? %>
+                    <li><b>Minor(s):</b> <%= @person.minors %></li>
+                    <% end %>
+                    <% unless @person.bio.empty? %>
+                    <li><b>Bio:</b><%= @person.bio %></li>
+                    <% end %>                     
+    </div> 
+</div>
+<br><br>
+<% position = "Sponsorship Coordinator" %>
+<% @person = Officer.where(position: position).first %>
+    <div class="row-fluid">
+        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
+        <div class="span2">
+             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
+                     <img src= "<%= @imgString %>">
+         </div>
+         <div class="span9">
+            <ul>
+                <% unless @person.year.empty? %>
+                        <li><b>Year:</b> <%= @person.year %></li>
+                    <% end %>
+                    <% unless @person.majors.empty? %>
+                    <li><b>Major(s):</b> <%= @person.majors %></li>
+                    <% end %>
+                    <% unless @person.minors.empty? %>
+                    <li><b>Minor(s):</b> <%= @person.minors %></li>
+                    <% end %>
+                    <% unless @person.bio.empty? %>
+                    <li><b>Bio:</b><%= @person.bio %></li>
+                    <% end %>                     
+    </div> 
+</div>
+<br><br>
+
+<% position = "Webmaster" %>
+<% @person = Officer.where(position: position).first %>
+    <div class="row-fluid">
+        <h2><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
+        <div class="span2">
+             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
+                     <img src= "<%= @imgString %>">
+         </div>
+         <div class="span9">
+            <ul>
+                <% unless @person.year.empty? %>
+                        <li><b>Year:</b> <%= @person.year %></li>
+                    <% end %>
+                    <% unless @person.majors.empty? %>
+                    <li><b>Major(s):</b> <%= @person.majors %></li>
+                    <% end %>
+                    <% unless @person.minors.empty? %>
+                    <li><b>Minor(s):</b> <%= @person.minors %></li>
+                    <% end %>
+                    <% unless @person.bio.empty? %>
+                    <li><b>Bio:</b><%= @person.bio %></li>
+                    <% end %>                     
+    </div> 
+</div>
 
