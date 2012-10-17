@@ -16,8 +16,8 @@ CaseCycling::Application.routes.draw do
   match '/sponsors' => "static_pages#sponsors"
   match '/error' => "static_pages#error"
   match '/contact' => "static_pages#contact"
-
-
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
