@@ -11,17 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013201958) do
+ActiveRecord::Schema.define(:version => 20121023235917) do
 
   create_table "active_admin_comments", :force => true do |t|
-    t.string   "resource_id",   :null => false
-    t.string   "resource_type", :null => false
-    t.integer  "author_id"
-    t.string   "author_type"
-    t.text     "body"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.string   "namespace"
+    t.string    "resource_id",   :null => false
+    t.string    "resource_type", :null => false
+    t.integer   "author_id"
+    t.string    "author_type"
+    t.text      "body"
+    t.timestamp "created_at",    :null => false
+    t.timestamp "updated_at",    :null => false
+    t.string    "namespace"
   end
 
   add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
@@ -29,55 +29,62 @@ ActiveRecord::Schema.define(:version => 20121013201958) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
   create_table "admin_users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "contacted"
+    t.string    "email",                  :default => "", :null => false
+    t.string    "encrypted_password",     :default => "", :null => false
+    t.string    "reset_password_token"
+    t.timestamp "reset_password_sent_at"
+    t.timestamp "remember_created_at"
+    t.integer   "sign_in_count",          :default => 0
+    t.timestamp "current_sign_in_at"
+    t.timestamp "last_sign_in_at"
+    t.string    "current_sign_in_ip"
+    t.string    "last_sign_in_ip"
+    t.timestamp "created_at",                             :null => false
+    t.timestamp "updated_at",                             :null => false
+    t.string    "contacted"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "blogs", :force => true do |t|
-    t.string   "title"
-    t.date     "date"
-    t.text     "contents"
+    t.string    "title"
+    t.date      "date"
+    t.text      "contents"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
+    t.string    "url"
+  end
+
+  create_table "carousels", :force => true do |t|
+    t.string   "url"
+    t.boolean  "enabled"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "url"
   end
 
   create_table "coaches", :force => true do |t|
-    t.string   "name"
-    t.string   "contact"
-    t.text     "bio"
-    t.string   "picture"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.string    "contact"
+    t.text      "bio"
+    t.string    "picture"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "contacts", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "topic"
-    t.text     "message"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.string    "email"
+    t.string    "topic"
+    t.text      "message"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "disciplines", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "disciplines_members", :id => false, :force => true do |t|
@@ -89,27 +96,27 @@ ActiveRecord::Schema.define(:version => 20121013201958) do
   add_index "disciplines_members", ["member_id", "discipline_id"], :name => "index_disciplines_members_on_member_id_and_discipline_id"
 
   create_table "events", :force => true do |t|
-    t.string   "name"
-    t.string   "location"
-    t.datetime "date"
-    t.string   "website"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "discipline"
+    t.string    "name"
+    t.string    "location"
+    t.timestamp "date"
+    t.string    "website"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
+    t.string    "discipline"
   end
 
   create_table "members", :force => true do |t|
-    t.string   "name"
-    t.string   "standing"
-    t.string   "majors"
-    t.string   "minors"
-    t.string   "collegeCategory"
-    t.text     "bio"
-    t.boolean  "isRacer"
-    t.string   "picture"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "usacCategory"
+    t.string    "name"
+    t.string    "standing"
+    t.string    "majors"
+    t.string    "minors"
+    t.string    "collegeCategory"
+    t.text      "bio"
+    t.boolean   "isRacer"
+    t.string    "picture"
+    t.timestamp "created_at",      :null => false
+    t.timestamp "updated_at",      :null => false
+    t.string    "usacCategory"
   end
 
   create_table "members_disciplines", :id => false, :force => true do |t|
@@ -121,43 +128,42 @@ ActiveRecord::Schema.define(:version => 20121013201958) do
   add_index "members_disciplines", ["member_id", "discipline_id"], :name => "index_members_disciplines_on_member_id_and_discipline_id"
 
   create_table "messages", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "message"
-    t.string   "topic"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "name"
+    t.string    "email"
+    t.text      "message"
+    t.string    "topic"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "officers", :force => true do |t|
-    t.string   "name"
-    t.string   "majors"
-    t.string   "minors"
-    t.string   "contact"
-    t.text     "bio"
-    t.string   "picture"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "position"
-    t.string   "year"
+    t.string    "name"
+    t.string    "majors"
+    t.string    "minors"
+    t.string    "contact"
+    t.text      "bio"
+    t.string    "picture"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
+    t.string    "position"
+    t.string    "year"
   end
 
   create_table "positions", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "title"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "rides", :force => true do |t|
-    t.datetime "time"
-    t.string   "location"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "discipline"
-    t.string   "description"
-    t.integer  "distance"
-    t.string   "pace"
-    t.boolean  "recurring"
+    t.timestamp "time"
+    t.string    "location"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
+    t.string    "discipline"
+    t.integer   "distance"
+    t.string    "pace"
+    t.boolean   "recurring"
   end
 
 end
