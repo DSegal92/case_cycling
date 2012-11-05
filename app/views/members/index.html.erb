@@ -1,94 +1,102 @@
-<br><center><h1 id="pageTitle"> Racers </h1></center>
-<br>
-<% @racers.each do |racer| %>
- <span class="page-header" id="nav1">
-    <h3 id="nameBig"> <%= racer.name %></h3>
-    </span>
-    <table id="bioText">
-        <tbody>
-            <tr>
-                <td rowspan = "5" width= "200">
-                    <% @imgString = "/assets/" +  racer.picture + ".jpg" %>
-                    <img src= "<%= @imgString %>">
-                </td>
-                <td>
-                    <ul>                        
-                        <% unless racer.standing.empty? %>
-                            <li><b>Year:</b> <%= racer.standing %></li>
-                        <% end %>
-
-                        <% unless racer.majors.empty? %>
-                            <li><b>Major(s):</b> <%= racer.majors %></li>
-                        <% end %>
-
-                        <% unless racer.minors.empty? %>
-                            <li><b>Minor(s):</b> <%= racer.minors %></li>
-                        <% end %>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <% unless racer.usacCategory.nil? %>
-                            <li><b>USAC Category:</b> <%= racer.usacCategory %> </li>
-                        <% end %>
-
-                        <% unless racer.collegeCategory.empty? %>
-                            <li><b>Collegiate Category:</b> <%= racer.collegeCategory %> </li>
-                        <% end %>
-
-                        <% unless racer.disciplines.empty? %>
-                            <li><b>Disciplines: </b>
-                            <% racer.disciplines.each_with_index do |dis, index| %>
-                                <% if index == 0 %>
-                                    <%= dis.name %>   
-                                <% else %>
-                                    / <%= dis.name %>
-                                <% end %>                       
-                            <% end %>
-                            </li>
-                        <% end %>
-                    </ul>
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <% unless racer.bio.empty? %>
-                    <ul><b>Bio:</b> <%= racer.bio %></ul>
-                    <% end %>
-                </td>
-              
-            </tr>
-        </tbody>
-    </table> 
-<% end %>
-<br>
 <div class="row-fluid">
-    <div class="span12">
+            <div class="span12">
+    <table>
+    <tbody>
+        <tr>
+            <% @racers.each_with_index do |racer, index| %>
+                <% if index % 2 == 0 %>
+                    </tr><tr>
+                <% end %>    
+
+            <td>
+                <span class="page-header" id="nav1">
+                    <h3 id="nameBig"> <%= racer.name %></h3>
+                </span>
+                <table id="bioText">
+                    <tbody>   
+                        <tr>
+                            <td rowspan = "5" width= "200">
+                                <% if racer.picture == "default" %>
+                                <img src= "/assets/default.jpg" %>
+                                <% else %>
+                                <img src= "<%= racer.picture %>">
+                                <% end %>
+                            </td>
+                            <td>
+                                <ul>                        
+                                    <% unless racer.standing.empty? %>
+                                    <li><b>Standing:</b> <%= racer.standing %></li>
+                                    <% end %>
+                
+                                    <% unless racer.majors.empty? %>
+                                    <li><b>Major(s):</b> <%= racer.majors %></li>
+                                    <% end %>
+                
+                                    <% unless racer.minors.empty? %>
+                                    <li><b>Minor(s):</b> <%= racer.minors %></li>
+                                    <% end %>
+                                    <% unless racer.disciplines.empty? %>
+                                    <li><b>Disciplines: </b>
+                                        <% racer.disciplines.each_with_index do |dis, index| %>
+                                        <% if index == 0 %>
+                                        <%= dis.name %>   
+                                        <% else %>
+                                        / <%= dis.name %>
+                                        <% end %>                       
+                                        <% end %>
+                                    </li>
+                                    <% end %>
+                                </ul>
+                            </td>                
+                        </tr>
+                    </tbody>
+                </table> 
+            </td>
+        <% end %>
+    </tbody>
+</table>
+</div>
+</div>
+
+
+<!-- <br>
+<div class="row-fluid">
+    
         <center><h1 id="pageTitle"> Recreational Riders </h1></center>
         <br>
         <table class="recTable">
             <tr>
                 <% @recRiders.each_with_index do |rec, index| %>        
-                    <% if index % 3 == 0 %>
+                    <% if index % 2 == 0 %>
                         </tr><tr>
-                    <% end %>                   
-                        <td class="recCell">
-                            <ul>
-                                <li><h3 id="nameBig"><%= rec.name %><small> (<%= rec.standing %>)</small></li></h3>
-                                <li id="bioText">
-                                    <% unless rec.disciplines.empty? %>                        
-                                        <% rec.disciplines.each_with_index do |dis, index| %>
-                                            <% if index == 0 %>
-                                                <%= dis.name %>   
-                                            <% else %>
-                                                / <%= dis.name %>
-                                            <% end %>                       
-                                        <% end %>                                
-                                    <% end %>
-                                </li>
-                            </ul>
-                        </td>
+                    <% end %>    
+                            
+                    <td class="recCell">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td width="30%"><img src= "<%= rec.picture %>"></td>
+                            <td>
+                                <ul>   
+                                    <li><h3 id="nameBig"><%= rec.name %></h3></li>                             
+                                    <li id="bioText">
+                                        <%= rec.standing %>, <%= rec.majors %>
+                                    </li>
+                                    <li id="bioText">
+                                        <% unless rec.disciplines.empty? %>                        
+                                            <% rec.disciplines.each_with_index do |dis, index| %>
+                                                <% if index == 0 %>
+                                                    <%= dis.name %>   
+                                                <% else %>
+                                                    / <%= dis.name %>
+                                                <% end %>                       
+                                            <% end %>                                
+                                        <% end %>
+                                    </li>
+                                </ul>                                
+                            </td>
+                        </tbody>
+                    </table>                          
                 <% end %>
             </tr>
         </table>
@@ -102,4 +110,5 @@
 
 
 <br />
+-->
 

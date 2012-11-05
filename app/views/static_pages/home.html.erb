@@ -60,22 +60,23 @@ jQuery(document).ready(function($) {
 						<h4 id="upcoming"> upcoming events</h4>
 						<tbody>        
 							<% @events.each do |event| %>
-								<% if event.date > Time.now() %>
+								
 								<tr>					
-									<td colspan='2'><%= event.name %> (<%= event.discipline %>)</td>
+									<td colspan='2'><b><%= event.name %></b><% unless event.discipline.empty? %>(<%= event.discipline %>)
+									 <% end %></td>
 								</tr>
 								<tr>
 									<td>
 										<span id="navFront">
 											<ul> 
-												<li><%= event.location %></li>
-												<li><%= event.date.strftime('%A %D') %> at <%= event.date.strftime("at %I:%M%p") %></li>
-												<li><%= link_to event.website, event.website %></li>
+												<li>&nbsp;&nbsp;&nbsp;<%= event.location %></li>
+												<li>&nbsp;&nbsp;&nbsp;<%= event.date.strftime('%A %D') %> at <%= event.date.strftime("at %I:%M%p") %></li>
+												<li>&nbsp;&nbsp;&nbsp;<%= link_to event.website, event.website %></li>
 											</ul>
 										</span>
 									</td>								               
 								</tr>
-								<% end %>
+								
 							<% end %>
 						</tbody>
 					</table>
