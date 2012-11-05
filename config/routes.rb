@@ -15,6 +15,7 @@ CaseCycling::Application.routes.draw do
   match '/contact' => "messages#new"
   match '/sponsors' => "static_pages#sponsors"
   match '/error' => "static_pages#error"
+  match '/about' => "static_pages#about"
   match '/contact' => "static_pages#contact"
   
   
