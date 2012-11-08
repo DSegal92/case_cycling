@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121023235917) do
+ActiveRecord::Schema.define(:version => 20121108035236) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string    "resource_id",   :null => false
@@ -57,10 +57,10 @@ ActiveRecord::Schema.define(:version => 20121023235917) do
   end
 
   create_table "carousels", :force => true do |t|
-    t.string   "url"
-    t.boolean  "enabled"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "url"
+    t.boolean   "enabled"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "coaches", :force => true do |t|
@@ -164,6 +164,7 @@ ActiveRecord::Schema.define(:version => 20121023235917) do
     t.integer   "distance"
     t.string    "pace"
     t.boolean   "recurring"
+    t.string    "name"
   end
 
 end
