@@ -1,6 +1,7 @@
 ActiveAdmin.register Ride do
   form do |f|
       f.inputs do
+        f.input :name
       	f.input :distance
       	f.input :pace, :collection => ride.getPace
         f.input :location
