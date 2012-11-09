@@ -50,10 +50,14 @@ jQuery(document).ready(function($) {
 							<tr>
 								<td id="contentText" colspan='3'><%= simple_format(post.contents) %></td>
 							</tr>
-							
+
+				<% end %>	
+				<tr>
+								<td id="right"><a href="/blog"><h2 id="postTitle">More Posts -></h2></a></td>
+							</tr>
 						</tbody>
 					</table>
-				<% end %>		
+
 			</div>
 			<div class="span4">
 				<table id="contentText">

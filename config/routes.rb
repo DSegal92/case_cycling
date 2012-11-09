@@ -7,12 +7,14 @@ CaseCycling::Application.routes.draw do
   resources :rides
   resources :members
 
+
   root to: 'static_pages#home'
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   match '/contact' => "messages#new"
+  match '/blog' => "blogs#index"
   match '/sponsors' => "static_pages#sponsors"
   match '/error' => "static_pages#error"
   match '/about' => "static_pages#about"
