@@ -45,12 +45,12 @@
 }
 
 #nameBig{
-   font-family: "TitilliumMaps26L-500wt", sans-serif;
+   /* font-family: "TitilliumMaps26L-500wt", sans-serif; */
    font-size: 24px;
    text-transform: lowercase;
    color: #003755;
    small {
-    font-family: "TitilliumMaps26L-250wt", sans-serif;
+     /* font-family: "TitilliumMaps26L-250wt", sans-serif; */
     font-size: 18px;
   }
 }
@@ -65,7 +65,7 @@
 
 
 #headerTextBig{
-   font-family: "TitilliumMaps26L-500wt", sans-serif;
+   /* font-family: "TitilliumMaps26L-500wt", sans-serif; */
    font-size: 36px;
    text-transform: lowercase;
    color: #fff;
@@ -73,7 +73,7 @@
 }
 
 #headerTextSmall{
-   font-family: "TitilliumMaps26L-250wt";
+   /* font-family: "TitilliumMaps26L-250wt"; */
    font-size: 20px;
    text-transform: lowercase;
    color: #fff;
@@ -81,21 +81,21 @@
 }
 
 #upcoming{
-    font-family: TitilliumMaps26L-750wt, sans-serif;
+    /* font-family: TitilliumMaps26L-750wt, sans-serif; */
     font-size: 18px;
     color: #003755;
     text-shadow: 0 1px 0 rgba(0,0,0,0.01);
 }
 
 #navigation{
-   font-family: "TitilliumMaps26L-250wt";
+   /* font-family: "TitilliumMaps26L-250wt"; */
    font-size: 17px;
    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
 }
 
 #postTitle{
-   font-family: TitilliumMaps26L-750wt, sans-serif;
-   font-size: 24px;
+   /* font-family: TitilliumMaps26L-750wt, sans-serif; */
+   font-size: 20px;
    text-transform: lowercase;
    color: #003755;
    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
@@ -106,7 +106,7 @@
 }
 
 #pageTitle{
-   font-family: TitilliumMaps26L-250wt, sans-serif;
+   /* font-family: TitilliumMaps26L-250wt, sans-serif; */
    font-size: 40px;
    text-transform: lowercase;
    color: #003755;
@@ -114,7 +114,7 @@
 }
 
 #postDate{
-  font-family: TitilliumMaps26L-750wt, sans-serif;
+  /* font-family: TitilliumMaps26L-750wt, sans-serif; */
    font-size: 16px;
    text-transform: lowercase;
    color: #003755;
@@ -122,15 +122,15 @@
 }
 
 #contentText{
-  font-family: TitilliumMaps26L-250wt, sans-serif;
-   font-size: 15px;
+  /* font-family: TitilliumMaps26L-250wt, sans-serif; */
+   font-size: 14px;
    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
  
 
 }
 
 #bioText{
-  font-family: TitilliumMaps26L-250wt, sans-serif;
+  /* font-family: TitilliumMaps26L-250wt, sans-serif; */
    font-size: 16px;
    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
  
@@ -141,7 +141,7 @@
 /* footer */
 
 #navBottom ul li {
- font-family: TitilliumMaps26L-250wt;
+ /* font-family: TitilliumMaps26L-250wt; */
   font-size:12px;
   display: inline;
   list-style: none;

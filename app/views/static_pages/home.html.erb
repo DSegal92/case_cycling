@@ -64,9 +64,9 @@ jQuery(document).ready(function($) {
 						<h4 id="upcoming"> upcoming events</h4>
 						<tbody>        
 							<% @events.each do |event| %>
-								
+								<% if event.date() >= Time.now() %>
 								<tr>					
-									<td colspan='2'><b><%= event.name %></b><% unless event.discipline.empty? %>(<%= event.discipline %>)
+									<td colspan='2'>&nbsp;&nbsp;&nbsp;<b><%= event.name %></b><% unless event.discipline.empty? %>(<%= event.discipline %>)
 									 <% end %></td>
 								</tr>
 								<tr>
@@ -80,7 +80,7 @@ jQuery(document).ready(function($) {
 										</span>
 									</td>								               
 								</tr>
-								
+								<% end %>
 							<% end %>
 						</tbody>
 					</table>
@@ -88,7 +88,7 @@ jQuery(document).ready(function($) {
 						<h4 id="upcoming"> upcoming rides </h4>
 						<tbody>        
 							<% @rides.each do |ride| %>
-								<% if ride.time > Time.now() || ride.recurring %>
+								<% if ride.time >= Time.now() || ride.recurring %>
 								<tr>
 									<td>
 										<b><%= ride.name %></b>
