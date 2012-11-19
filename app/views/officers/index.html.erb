@@ -9,8 +9,11 @@
                 <tbody>
                     <tr>
                         <td width="200">
-             <% @imgString = "/assets/" +  @person.picture + ".jpg" %>
-                     <img src= "<%= @imgString %>">
+            <% if @person.picture == "default" %>
+                                <img src= "/assets/default.jpg" %>
+                                <% else %>
+                                <img src= "<%= @person.picture %>">
+                                <% end %>
                  </td>
                  <td>
     
