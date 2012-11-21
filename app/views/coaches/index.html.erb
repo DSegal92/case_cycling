@@ -2,8 +2,11 @@
     <div class="row-fluid">
         <h2><%= coach.name %> <small>(<%= link_to coach.contact, "mailto:" + coach.contact %>)</small></h2>
         <div class="span2">
-             <% @imgString = "/assets/" +  coach.picture + ".jpg" %>
-                     <img src= "<%= @imgString %>">
+              <% if coach.picture == "default" %>
+                                <img src= "/assets/default.jpg" %>
+                                <% else %>
+                                <img src= "<%= coach.picture %>">
+                                <% end %>
          </div>
          <div class="span9">
             <ul>
