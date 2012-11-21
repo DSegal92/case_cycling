@@ -19,6 +19,7 @@ CaseCycling::Application.routes.draw do
   match '/error' => "static_pages#error"
   match '/about' => "static_pages#about"
   match '/contact' => "static_pages#contact"
+  match '/clothing' => "static_pages#clothing"
   
   
   # The priority is based upon order of creation:

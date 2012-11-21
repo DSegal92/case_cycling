@@ -2,6 +2,7 @@
 <br>
 <% position = type %>
 <% @person = Officer.where(position: position).first %>
+    <% if !@person.nil? %>
     <div class="row-fluid">
         <h2 id="nameBig"><%= position %> <small> <%= @person.name %> (<%= link_to @person.contact, "mailto:" + @person.contact %>)</small></h2>
         <div class="span12">
@@ -37,4 +38,5 @@
  
 </div>
 <br><br>
+<% end %>
 <% end %>

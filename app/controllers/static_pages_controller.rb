@@ -16,5 +16,8 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def clothing
+  end
+
 
 end
