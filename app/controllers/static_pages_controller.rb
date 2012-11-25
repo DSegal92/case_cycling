@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-  	@rides = Ride.find(:all, :order => "time DESC").first(3)
+  	@rides = Ride.find(:all, :order => "time ASC").first(3)
   	@events = Event.find(:all, :order => "date DESC").first(3)
   	@posts = Blog.find(:all, :order => "date DESC").first(2)
   	@carousel = Carousel.where(:enabled => true)
