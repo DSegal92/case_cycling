@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 			</div>
 			<div class="span4">
 				<table id="contentText">
-						<h4 id="upcoming"> upcoming events</h4>
+						<span id="upcoming"> upcoming events</span>
 						<tbody>        
 							<% @events.each do |event| %>
 								<% if event.date() >= Time.now() %>
@@ -85,7 +85,7 @@ jQuery(document).ready(function($) {
 						</tbody>
 					</table>
 					<table id="contentText">
-						<h4 id="upcoming"> upcoming rides </h4>
+						<span id="upcoming"> upcoming rides </span>
 						<tbody>        
 							<% @rides.each do |ride| %>
 								<% if ride.time >= Time.now() || ride.recurring %>
