@@ -42,8 +42,14 @@
       var $this = $(this)
         , $parent
         , isActive
+         , $target = $(e.target)
 
-      if ($this.is('.disabled, :disabled')) return
+      if ($this.is('.disabled, :disabled') 
+  || $target.closest('.dropdown-submenu').length 
+  || ( $target.closest('.open').length && !$this.is(e.currentTarget) ) ) {
+  e.preventDefault();
+  return
+}
 
       $parent = getParent($this)
 
@@ -74,7 +80,12 @@
       e.preventDefault()
       e.stopPropagation()
 
-      if ($this.is('.disabled, :disabled')) return
+      if ($this.is('.disabled, :disabled') 
+  || $target.closest('.dropdown-submenu').length 
+  || ( $target.closest('.open').length && !$this.is(e.currentTarget) ) ) {
+  e.preventDefault();
+  return
+}
 
       $parent = getParent($this)
 
@@ -140,7 +151,7 @@
 
   $(function () {
     $('html')
-      .on('click.dropdown.data-api touchstart.dropdown.data-api', clearMenus)
+      .on('click.dropdown.data-api touchstart.dropdown.data-api', function(e) { if ( !$(e.target).closest('.open').length ) clearMenus() })
     $('body')
       .on('click.dropdown touchstart.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
       .on('click.dropdown.data-api touchstart.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
