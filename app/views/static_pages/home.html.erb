@@ -85,24 +85,23 @@ jQuery(document).ready(function($) {
 						</tbody>
 					</table>
 					<table id="contentText">
-						<span id="upcoming"> upcoming rides </span>
+						<span id="upcoming"> rides this week </span>
 						<tbody>        
 							<% @rides.each do |ride| %>
 								<% if ride.time >= Time.now() || ride.recurring %>
 								<tr>
 									<td>
-										<b><%= ride.name %></b>
+										<b id="rideName"><%= ride.name %></b>
 									</td>
 								</tr>
-								<% unless ride.discipline.empty? && ride.distance.nil? && ride.pace.empty?%>
+								
 								<tr>
-									<td colspan='2'><% unless ride.discipline.empty?%> <%= ride.discipline %>  Ride / <% end %><% unless ride.distance.nil?%> <%= ride.distance %> miles / <% end %> <% unless ride.pace.empty? %><%= ride.pace %><% end %></td>                
-								</tr>
-								<% end %>
-								<tr>
-									<td>
-										<span id="navFront">
+									<td>										
 											<ul id="contentText">
+												<% unless ride.discipline.empty? && ride.distance.nil? && ride.pace.empty?%>							
+									<li>&nbsp;&nbsp;<% unless ride.discipline.empty?%> <%= ride.discipline %>  / <% end %><% unless ride.distance.nil?%> <%= ride.distance %> miles / <% end %> <% unless ride.pace.empty? %><%= ride.pace %> Pace <% end %></li>                
+							
+								<% end %>
 												<li>&nbsp;&nbsp;&nbsp;Where: <%= ride.location %></li>
 												<% if ride.recurring %>
 												<li>&nbsp;&nbsp;&nbsp;<%= ride.time.strftime("%A - %I:%M %p") %>
@@ -110,7 +109,7 @@ jQuery(document).ready(function($) {
 												<li>&nbsp;&nbsp;&nbsp;<%= ride.time.strftime("%A %D -%I:%M %p") %></li>
 												<% end %>
 											</ul>
-										</span>
+										
 									</td>               
 								</tr>
 								<% end %>

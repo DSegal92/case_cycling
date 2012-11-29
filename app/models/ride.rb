@@ -6,7 +6,7 @@ class Ride < ActiveRecord::Base
   end
 
   def getPace
-  	pace = ["A", "B", "Recovery"]
+  	pace = ["A", "B", "Recovery", "A & B"]
   end
 
 end
