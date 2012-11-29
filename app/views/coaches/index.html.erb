@@ -1,6 +1,6 @@
 <% @coaches.each do |coach| %>
     <div class="row-fluid">
-        <h2><%= coach.name %> <small>(<%= link_to coach.contact, "mailto:" + coach.contact %>)</small></h2>
+        <h2 id="nameBig">Coach<small> <%= coach.name %> (<%= link_to coach.contact, "mailto:" + coach.contact %>)</small></h2>
         <div class="span2">
               <% if coach.picture == "default" %>
                                 <img src= "/assets/default.jpg" %>
@@ -8,7 +8,7 @@
                                 <img src= "<%= coach.picture %>">
                                 <% end %>
          </div>
-         <div class="span9">
+         <div class="span9" id="bioText">
             <ul>
           
                     <% unless coach.bio.empty? %>
