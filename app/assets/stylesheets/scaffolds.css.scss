@@ -89,6 +89,14 @@
     text-shadow: 0 1px 0 rgba(0,0,0,0.01);
 }
 
+#sponsors{
+   font-family: "TitilliumMaps26L-500wt", sans-serif;
+   font-size: 30px;
+   text-transform: lowercase;
+   color: #003755;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+}
+
 #headerTextSmall{
    font-family: "TitilliumMaps26L-250wt"; 
    font-size: 20px;
@@ -160,7 +168,7 @@
 /* footer */
 
 #navBottom ul li {
- /* font-family: MuseoSlab-100wt; */
+ font-family: MuseoSlab-100wt; 
   font-size:12px;
   display: inline;
   list-style: none;
