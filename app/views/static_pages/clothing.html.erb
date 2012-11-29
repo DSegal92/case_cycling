@@ -1,8 +1,14 @@
 <script type='text/javascript'>//<![CDATA[ 
 
 var initialData = [
-    {clothingType: "Short Sleeve Jersey", clothingPicture: "http://i.imgur.com/uIaUg.jpg", amount: []},
-    {clothingType: "Short Sleeve Jersey2", clothingPicture: "http://www.aerotechdesigns.com/smartwool/17800-rambition-short.gif", amount: []    },
+    {clothingType: "Short Sleeve Jersey", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C102M12", amount: [{"quantity":"1","size":"M","womens":false}]},
+    {clothingType: "Long Sleeve Jersey", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C106M12", amount: []},
+    {clothingType: "Bibshorts", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C202M12", amount: []},
+    {clothingType: "Skinsuit", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C505M12", amount: []},
+    {clothingType: "Speed Suit", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C506M11", amount: []},
+    {clothingType: "Gloves", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C004U11", amount: []},
+    {clothingType: "Cap", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=152&height=186&product=C007U13", amount: []},
+
     
 ];
  
@@ -10,8 +16,6 @@ var ContactsModel = function(clothingOrders, name, email) {
     var self = this;
     this.name = ko.observable(name);
     this.email = ko.observable(email);
-    availableQuantities = ko.observableArray(['1', '2', '3', '4','5']);
-                chosenQuantities = ko.observable(['1']);
     self.clothingOrders = ko.observableArray(ko.utils.arrayMap(clothingOrders, function(clothingOrder) {
         return  { 
                 clothingType: clothingOrder.clothingType, 
@@ -24,8 +28,9 @@ var ContactsModel = function(clothingOrders, name, email) {
 
     self.addOrder = function(clothingOrder) {
         clothingOrder.amount.push({
-            quantity: chosenQuantities, 
-            size: ""
+            quantity: "", 
+            size: "",
+            womens: false
         });
     };
  
@@ -33,10 +38,7 @@ var ContactsModel = function(clothingOrders, name, email) {
         $.each(self.clothingOrders(), function() { this.amount.remove(amount) })
     };
  
-    self.save = function() {
-        self.lastSavedJson(JSON.stringify(ko.toJS(self.contacts), null, 2));
-    };
-    self.lastSavedJson = ko.observable("")
+    
 };
  
  $(document).ready(function() {
@@ -77,14 +79,32 @@ var ContactsModel = function(clothingOrders, name, email) {
                           <tr>
                                 <td>Quantity</td>
                                 <td>Size</td>
+                                <td>Women's Cut?</td>
                               </tr>
 
                             <tbody data-bind="foreach: amount">
 
                                 <tr>
-                                    <td><select data-bind="options: availableQuantities, selectedOptions: chosenQuantities"></select></td>
-                                    <td><input data-bind='value: size' /></td>
-              
+                                    <td><select data-bind="value: quantity">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </td>
+                                    <td><select data-bind="value: size">
+                                            <option value="XXS">XX Small</option>
+                                            <option value="XS">X Small</option>
+                                            <option value="S">Small</option>
+                                            <option value="M" selected>Medium</option>
+                                            <option value="L">Large</option>
+                                            <option value="XL">X Large</option>
+                                            <option value="XXL">XX Large</option>
+                                            <option value="XXXL">XXX Large</option>
+                                            
+                                        </select></td>
+                                    <td><input type="checkbox" data-bind='checked: womens' ></td>
                                     <td><a href='#' data-bind='click: $root.removeOrder'>Delete</a></td>
                                 </tr>
                             </tbody>
@@ -95,10 +115,7 @@ var ContactsModel = function(clothingOrders, name, email) {
             </tbody>
         </table>
     </div>
-     
-    <p>
-        <button data-bind='click: save, enable: clothingOrders().length > 0'>Save to JSON</button>
-    </p>
+    
      
     
 </div>
