@@ -17,15 +17,6 @@ font-size: 11px;
 	
 }
 	
-.mb-inside a, .mb-inside a:visited {color:#0CF; text-decoration:none; font-size:13px; }
-.mb-inside a:hover {color:#fff; text-decoration:none; font-size:13px; cursor:pointer}
-
-
-
-
-/* DEMO STYLES - delete these */
-.info {width:600px; margin:0 auto; color:#666; margin-top:50px; text-align:center; font-size:12px; }
-.info a:link, .info a:visited {color:#ccc}
-.info a:hover, .info a:active {color:#428CE7}
-#wrapper {width:600px; margin:0 auto; }
+.mb-inside a, .mb-inside a:visited {color:#ccc; text-decoration:none; font-size:13px; }
+.mb-inside a:hover {color:#428CE7; text-decoration:none; font-size:13px; cursor:pointer}
 

@@ -164,12 +164,26 @@ line-height: 1px;
 #contentText{
   font-family: MuseoSlab-100wt, sans-serif;
    font-size: 14px;
-  
+
 
 
  
 
 }
+
+.center-table
+{
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+#pending{
+      color:#F28500;
+    }
+
+#approved{
+      color:#03C03C;
+    }
 
 #bioText{
   font-family: MuseoSlab-100wt, sans-serif;
