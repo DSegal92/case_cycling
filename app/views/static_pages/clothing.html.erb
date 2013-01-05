@@ -1,129 +1,109 @@
-<script type='text/javascript'>//<![CDATA[ 
 
-var initialData = [
-    {clothingType: "Short Sleeve Jersey", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C102M12", amount: [{"quantity":"1","size":"M","womens":false}]},
-    {clothingType: "Long Sleeve Jersey", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C106M12", amount: []},
-    {clothingType: "Bibshorts", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C202M12", amount: []},
-    {clothingType: "Skinsuit", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C505M12", amount: []},
-    {clothingType: "Speed Suit", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C506M11", amount: []},
-    {clothingType: "Gloves", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=200&height=244&product=C004U11", amount: []},
-    {clothingType: "Cap", clothingPicture: "https://www.hincapie.com/ProductViewer.ashx?color=0&shot=0&width=152&height=186&product=C007U13", amount: []},
+  <!-- Required CSS -->
+  <link type="text/css" href="/assets/fancymoves.css" media="screen" charset="utf-8" rel="stylesheet"  />
 
-    
-];
- 
-var ContactsModel = function(clothingOrders, name, email) {
-    var self = this;
-    this.name = ko.observable(name);
-    this.email = ko.observable(email);
-    self.clothingOrders = ko.observableArray(ko.utils.arrayMap(clothingOrders, function(clothingOrder) {
-        return  { 
-                clothingType: clothingOrder.clothingType, 
-                clothingPicture: clothingOrder.clothingPicture, 
-                amount: ko.observableArray(clothingOrder.amount),
 
-                 };
-    }));
+  <!-- Required script -->
  
 
-    self.addOrder = function(clothingOrder) {
-        clothingOrder.amount.push({
-            quantity: "", 
-            size: "",
-            womens: false
-        });
-    };
- 
-    self.removeOrder = function(amount) {
-        $.each(self.clothingOrders(), function() { this.amount.remove(amount) })
-    };
- 
-    
-};
- 
- $(document).ready(function() {
-    jsonModel = new ContactsModel(initialData, "", "");
-    ko.applyBindings(jsonModel);
-  });
+  <!-- Demo only -->
+  <link type="text/css" href="/assets/demo.css" media="screen" charset="utf-8" rel="stylesheet"  />
   
   
-//ko.applyBindings(new ContactsModel(initialDataOrder));
-//]]>  
+  <!-- FancyBox scripts -->
+  <script type="text/javascript" src="/assets/jquery.mousewheel-3.0.4.pack.js"></script>
+  
+ 
+  <link rel="stylesheet" type="text/css" href="/assets/fancybox.css" media="screen" />
+  
+      <script type="text/javascript">
+    $(document).ready(function() {
+      /*
+      *   Examples - images
+      */
 
-</script>
+      $("a.pop1").fancybox();
+      $("a.pop2").fancybox();
+      $("a.pop3").fancybox();
+      $("a.pop4").fancybox();
+      $("a.pop5").fancybox();
+      $("a.pop6").fancybox();
 
-<body>
-  <div class='liveExample'> 
-    <br>
-    <br>
-      <p>Name: <input data-bind="value: name" /></p>
-        <p>Email: <input data-bind="value: email" /></p>
-        <br>
-        <br>
-    <div id='clothingOrdersList'>
-        <table class='clothingOrdersEditor'>
-         
+    });
+  </script>
+
+
+<!-- info -->
+<div class="info">
+<div align="center"></div>
+<!-- /info -->
+
+<div id="wrapper">
+  <!-- Slider -->
+  <div id="slider-three">
+
+            <div>
+            <img src="/assets/clothing/mens.png" alt="" />
+                        
+                              <p>Men's Jersey<br />
+                                  <a class="pop1" href="/assets/clothing/mens-2.png" rel="group1" title="example title text">More Views</a>
+                                  
+                              </p>                              
+            </div>
         
-            <tbody data-bind="foreach: clothingOrders">
-             
-                <tr>
-                    <td>
-                        <ul>
-                          <li><span data-bind='text: clothingType' /></li>
-                          <li><img data-bind="attr: {src: clothingPicture, width: 200}"></li>
-                        </ul>
-                    </td>
-                    
-                    <td>
-                        <table>
-                          <tr>
-                                <td>Quantity</td>
-                                <td>Size</td>
-                                <td>Women's Cut?</td>
-                              </tr>
+            <div>
+            <img src="/assets/clothing/womens.png" alt="" />
+                        
+                              <p>Women's Jersey<br />
+                                  <a class="pop2" href="/assets/clothing/womens-2.png" rel="group2" title="example title text">More Views</a>
+                              </p>
+            </div>
+        
+            <div>
+            <img src="/assets/clothing/bibs.png" alt="" />
+                        
+                              <p>Bibshorts<br />
+                                  <a class="pop3" href="/assets/clothing/bibs-2.png" rel="group3" title="example title text">More Views</a>
+                                  <a class="pop3" href="/assets/clothing/bibs-3.png" rel="group3" title="more text right here"></a>
+                              </p>
+            </div>
+        
+            <div>
+            <img src="/assets/clothing/skin.png" alt="" />
+                        
+                              <p>Skinsuit<br />
+                                  <a class="pop4" href="/assets/clothing/skin-2.png" rel="group4" title="example title text">More Views</a>
+                                  <a class="pop4" href="/assets/clothing/skin-3.png" rel="group4" title="more text right here"></a>
+                              </p>
+            </div>
 
-                            <tbody data-bind="foreach: amount">
+            <div>
+            <img src="/assets/clothing/gloves.png" alt="" />
+                        
+                              <p>Gloves<br />
+                                  <a class="pop5" href="/assets/clothing/gloves-2.png" rel="group5" title="example title text">More Views</a>
+                                
+                              </p>
+            </div>
+        
+            
+        
+            <div>
+            <img src="/assets/clothing/cap.png" alt="" />
+                        
+                              <p>Cap<br />
+                                  <a class="pop6" href="/assets/clothing/cap-2.png" rel="group6" title="example title text">More Views</a>
+                                  <a class="pop6" href="/assets/clothing/cap-3.png" rel="group6" title="more text right here"></a>
+                                  <a class="pop6" href="/assets/clothing/cap-4.png" rel="group6" title="more text right here"></a>
+                                  <a class="pop6" href="/assets/clothing/cap-5.png" rel="group6" title="more text right here"></a>
+                                  <a class="pop6" href="/assets/clothing/cap-6.png" rel="group6" title="more text right here"></a>
 
-                                <tr>
-                                    <td><select data-bind="value: quantity">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </td>
-                                    <td><select data-bind="value: size">
-                                            <option value="XXS">XX Small</option>
-                                            <option value="XS">X Small</option>
-                                            <option value="S">Small</option>
-                                            <option value="M" selected>Medium</option>
-                                            <option value="L">Large</option>
-                                            <option value="XL">X Large</option>
-                                            <option value="XXL">XX Large</option>
-                                            <option value="XXXL">XXX Large</option>
-                                            
-                                        </select></td>
-                                    <td><input type="checkbox" data-bind='checked: womens' ></td>
-                                    <td><a href='#' data-bind='click: $root.removeOrder'>Delete</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <a href='#' data-bind='click: $root.addOrder'>Add <span data-bind="text: clothingType + ' To Order'"></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-     
-    
+                              </p>
+            </div>
+        
+            
+  </div>
 </div>
-  
 
 
-</body>
-
-
-</html>
 

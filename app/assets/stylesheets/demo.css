@@ -1,0 +1,31 @@
+
+/* panel images */
+.mb-inside img {
+  width: 100%;
+}
+
+
+#slider-one p, #slider-two p, #slider-three p, #slider-four p, #slider-five p {
+font-size: 11px;
+	color: #000; 
+	text-transform:uppercase; 
+	position:relative; 
+	top:-2.8em; 
+	text-align:center; 
+	font-weight:bold; 
+	font-family:Arial, Helvetica, sans-serif; 
+	
+}
+	
+.mb-inside a, .mb-inside a:visited {color:#0CF; text-decoration:none; font-size:13px; }
+.mb-inside a:hover {color:#fff; text-decoration:none; font-size:13px; cursor:pointer}
+
+
+
+
+/* DEMO STYLES - delete these */
+.info {width:600px; margin:0 auto; color:#666; margin-top:50px; text-align:center; font-size:12px; }
+.info a:link, .info a:visited {color:#ccc}
+.info a:hover, .info a:active {color:#428CE7}
+#wrapper {width:600px; margin:0 auto; }
+
