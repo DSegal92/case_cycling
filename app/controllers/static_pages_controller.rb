@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
 
     @rides = Ride.find(:all).select{|g| (g.time.wday - Time.now.wday >= 0)}
   	@events = Event.find(:all, :order => "date DESC").first(3)
-  	@posts = Blog.find(:all, :order => "date DESC").first(2)
+  	@posts = Blog.find(:all, :order => "id DESC").first(2)
   	@carousel = Carousel.where(:enabled => true)
   end
 
