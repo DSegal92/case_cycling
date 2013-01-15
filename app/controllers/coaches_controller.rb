@@ -4,7 +4,7 @@ class CoachesController < ApplicationController
   def index
     @coaches = Coach.find(:all, :order => "id ASC")
     
-    respond_to do |format|
+    respond_to do |format| 
       format.html # index.html.erb
       format.json { render json: @members }
     end
