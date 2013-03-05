@@ -14,6 +14,17 @@
         font-style: normal;
     }
 
+     @font-face {
+        font-family: 'TradeGothic';
+
+        src: 
+
+             asset-url('/assets/TradeGothic.ttf', font) format('truetype');
+             
+        font-weight: normal;
+        font-style: normal;
+    }
+
     @font-face {
         font-family: 'TitilliumMaps26L-500wt';
         src: asset-url('titilliummaps26l002.eot', font);
@@ -90,7 +101,7 @@ line-height: 1px;
 
 
 #headerTextBig{
-   font-family: "TitilliumMaps26L-500wt", sans-serif;
+   font-family: "TradeGothic", sans-serif;
    font-size: 36px;
    text-transform: lowercase;
    color: #fff;
@@ -98,7 +109,7 @@ line-height: 1px;
 }
 
 #sponsors{
-   font-family: "TitilliumMaps26L-500wt", sans-serif;
+   font-family: "TradeGothic", sans-serif;
    font-size: 30px;
    text-transform: lowercase;
    color: #003755;
@@ -106,7 +117,7 @@ line-height: 1px;
 }
 
 #headerTextSmall{
-   font-family: "TitilliumMaps26L-250wt"; 
+   font-family: "TradeGothic", sans-serif;
    font-size: 20px;
    text-transform: lowercase;
    color: #fff;
@@ -114,27 +125,27 @@ line-height: 1px;
 }
 
 #upcoming{
-    font-family: "TitilliumMaps26L-750wt", sans-serif;
+    font-family: "TradeGothic", sans-serif;
     font-size: 18px;
     color: #003755;
     text-shadow: 0 1px 0 rgba(0,0,0,0.01);
 }
 
 #rideName{
-    font-family: "MuseoSlab-100wt", sans-serif;
+    font-family:"TradeGothic", sans-serif;
     font-size: 14px;
     color: #000;
     text-shadow: 0 1px 0 rgba(0,0,0,0.01);
 }
 
 #navigation{
-   font-family: "TitilliumMaps26L-750wt";
+   font-family: "TradeGothic", sans-serif;
    font-size: 18px;
    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
 }
 
 #postTitle{
-   font-family: "TitilliumMaps26L-750wt", sans-serif;
+   font-family: "TradeGothic", sans-serif;
    font-size: 20px;
    text-transform: lowercase;
    color: #003755;
@@ -146,7 +157,7 @@ line-height: 1px;
 }
 
 #pageTitle{
-   font-family: MuseoSlab-100wt, sans-serif;
+   font-family: "TradeGothic", sans-serif;
    font-size: 40px;
    text-transform: lowercase;
    color: #003755;
@@ -154,7 +165,7 @@ line-height: 1px;
 }
 
 #postDate{
-    font-family: TitilliumMaps26L-750wt, sans-serif;
+    font-family: "TradeGothic", sans-serif;
    font-size: 16px;
    text-transform: lowercase;
    color: #003755;
@@ -162,7 +173,7 @@ line-height: 1px;
 }
 
 #contentText{
-  font-family: MuseoSlab-100wt, sans-serif;
+  font-family: Georgia, sans-serif;
    font-size: 14px;
 
 
@@ -186,7 +197,7 @@ line-height: 1px;
     }
 
 #bioText{
-  font-family: MuseoSlab-100wt, sans-serif;
+  font-family: Georgia, sans-serif;
    font-size: 16px;
    text-shadow: 0 1px 0 rgba(0,0,0,0.01);
  
