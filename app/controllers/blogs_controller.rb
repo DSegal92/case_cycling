@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-   @posts = Blog.find(:all, :order => "date DESC")
+   @posts = Blog.find(:all, :order => "id DESC")
 
     respond_to do |format|
       format.html # index.html.erb
