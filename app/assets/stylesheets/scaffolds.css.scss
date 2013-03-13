@@ -134,11 +134,16 @@ line-height: 1px;
 }
 
 #postTitle{
-   font-family: "TitilliumMaps26L-750wt", sans-serif;
-   font-size: 20px;
-   text-transform: lowercase;
-   color: #003755;
-   text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+  font-family: "TitilliumMaps26L-750wt", sans-serif;
+  font-size: 20px;
+  text-transform: lowercase;
+  color: #003755;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+  A:link {text-decoration: none; color:#003755;}
+  A:visited {text-decoration: none; color:#003755;}
+  A:active {text-decoration: none}  
+  A:hover {text-decoration: underline;}
+ 
 }
 
 #right{

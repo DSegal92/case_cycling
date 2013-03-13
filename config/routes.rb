@@ -20,6 +20,7 @@ CaseCycling::Application.routes.draw do
   match '/about' => "static_pages#about"
   match '/contact' => "static_pages#contact"
   match '/clothing' => "static_pages#clothing"
+  match '/blogs/:id' => 'blogs#show'
   
   
   # The priority is based upon order of creation:
