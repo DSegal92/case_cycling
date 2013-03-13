@@ -5,7 +5,7 @@
 					<table>
 						<tbody>
 							<tr>
-								<td id="postTitle" colspan='2'> <%= post.title %></td>
+								<td id="postTitle" colspan='2'> <a href="/blogs/<%= post.id %>"><%= post.title %></a></td>
 								
 							<tr>
 								<td id="contentText" colspan='3'><%= simple_format(post.contents) %></td>
