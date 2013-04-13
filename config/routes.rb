@@ -1,11 +1,6 @@
 CaseCycling::Application.routes.draw do
 
   resources :messages
-  resources :officers
-  resources :coaches
-  resources :events
-  resources :rides
-  resources :members
 
 
   root to: 'static_pages#home'
@@ -13,7 +8,11 @@ CaseCycling::Application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  match '/officers' => "officers#index"
+  match '/members' => "members#index"
+  match '/coaches' => "coaches#index"
   match '/contact' => "messages#new"
+  match '/messages' => ""
   match '/blog' => "blogs#index"
   match '/sponsors' => "static_pages#sponsors"
   match '/error' => "static_pages#error"
