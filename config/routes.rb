@@ -1,5 +1,13 @@
 CaseCycling::Application.routes.draw do
 
+  resources :messages
+  resources :officers
+  resources :coaches
+  resources :events
+  resources :rides
+  resources :members
+
+
   root to: 'static_pages#home'
 
   ActiveAdmin.routes(self)
@@ -8,14 +16,11 @@ CaseCycling::Application.routes.draw do
   match '/contact' => "messages#new"
   match '/blog' => "blogs#index"
   match '/sponsors' => "static_pages#sponsors"
-  match '/messages' => "messages#new"
   match '/error' => "static_pages#error"
   match '/about' => "static_pages#about"
   match '/contact' => "static_pages#contact"
   match '/clothing' => "static_pages#clothing"
   match '/blogs/:id' => 'blogs#show'
-
-   resources :messages
   
   
   # The priority is based upon order of creation:

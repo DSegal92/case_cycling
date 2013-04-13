@@ -49,7 +49,7 @@ class MessagesController < InheritedResources::Base
       	email = @messageMail.email
       	message = @messageMail.message
       	MessageMailer.newMessage(topic, name, email, message).deliver  
-        format.html { redirect_to "/", notice: 'Your message has been sent. Thank you for contacting us.' }
+        format.html { redirect_to "/contact", notice: 'Your message has been sent. Thank you for contacting us.' }
         format.json { render json: @message, status: :created, location: @message }
       else
         format.html { render action: "new" }
