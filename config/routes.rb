@@ -1,6 +1,5 @@
 CaseCycling::Application.routes.draw do
 
-  resources :messages
 
 
   root to: 'static_pages#home'
@@ -12,7 +11,7 @@ CaseCycling::Application.routes.draw do
   match '/members' => "members#index"
   match '/coaches' => "coaches#index"
   match '/contact' => "messages#new"
-  match '/messages' => ""
+  match '/messages' => "static_pages#error"
   match '/blog' => "blogs#index"
   match '/sponsors' => "static_pages#sponsors"
   match '/error' => "static_pages#error"
@@ -21,6 +20,9 @@ CaseCycling::Application.routes.draw do
   match '/clothing' => "static_pages#clothing"
   match '/blogs/:id' => 'blogs#show'
   
+
+
+  resources :messages
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
