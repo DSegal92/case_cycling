@@ -21,6 +21,7 @@ CaseCycling::Application.routes.draw do
   match '/contact' => "static_pages#contact"
   match '/clothing' => "static_pages#clothing"
   match '/blogs/:id' => 'blogs#show'
+  match '/sponsorship' => "static_pages#sponsorship_information"
   
   
   # The priority is based upon order of creation:

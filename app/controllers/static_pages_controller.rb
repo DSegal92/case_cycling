@@ -20,5 +20,8 @@ class StaticPagesController < ApplicationController
   def clothing
   end
 
+  def sponsorship_information
+  end
+
 
 end
