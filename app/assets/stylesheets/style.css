@@ -19,6 +19,13 @@ body {
 	-webkit-box-shadow: 0px 0px 10px #cbcbcb;
 }
 
+ul.top_list {
+display: table; 
+table-layout: fixed; /* the magic dust that ensure equal width */  
+}
+li.top_item{ display: table-cell; text-align: center; }
+
+
 h1 {
 	margin: 30px 0 15px 0;
 	font-size: 30px;
