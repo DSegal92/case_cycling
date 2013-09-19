@@ -114,10 +114,12 @@ jQuery(document).ready(function($) {
 									<td>										
 											<ul id="contentText">
 												<% unless ride.discipline.empty? && ride.distance.nil? && ride.pace.empty?%>							
-									<li>&nbsp;&nbsp;<% unless ride.discipline.empty?%> <%= ride.discipline %>  / <% end %><% unless ride.distance.nil?%> <%= ride.distance %> miles / <% end %> <% unless ride.pace.empty? %><%= ride.pace %> Pace <% end %></li>                
+									<li>&nbsp;&nbsp;<% unless ride.discipline.empty?%> <%= ride.discipline %>   <% end %><% unless ride.distance.nil?%> <%= ride.distance %> miles / <% end %> <% unless ride.pace.empty? %> / <%= ride.pace %> Pace <% end %></li>                
 							
 								<% end %>
+												<% unless ride.location.empty? %>
 												<li>&nbsp;&nbsp;&nbsp;Where: <%= ride.location %></li>
+												<% end %>
 												<% if ride.recurring %>
 												<li>&nbsp;&nbsp;&nbsp;<%= ride.time.strftime("%A - %I:%M %p") %>
 												<% else %>
