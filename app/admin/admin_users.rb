@@ -7,4 +7,12 @@ ActiveAdmin.register AdminUser do
  	 f.buttons
  	end
 
+ 	index do 
+ 		column :email
+ 		default_actions
+ 	end
+
+ 	show do |f|
+ 		
+ 	end
 end
