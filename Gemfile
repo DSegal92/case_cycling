@@ -7,8 +7,10 @@ gem "meta_search",    '>= 1.1.0.pre'
 gem 'taps'
 gem 'rack-rewrite', '~> 1.2.1'
 gem "therubyracer", :require => 'v8'
-gem "pg", :group => :production
 
+group :production do
+	gem "pg"
+end
 
 group :development do
   gem 'sqlite3', '1.3.5'
